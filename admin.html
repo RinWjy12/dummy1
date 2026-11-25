@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Portal | MEGABUILD Supply Co.</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #0f172a;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- TOP ADMIN NAVBAR -->
+  <header class="bg-slate-900 text-white sticky top-0 z-40 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-extrabold text-base">
+          M
+        </div>
+        <div>
+          <span class="font-extrabold text-base text-white tracking-tight">MEGABUILD</span>
+          <span class="text-xs px-2 py-0.5 ml-2 bg-slate-800 text-amber-400 rounded font-semibold">Portal Admin</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs">
+        <a href="index.html" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          <span>Lihat Halaman Publik (Toko)</span>
+        </a>
+        <button onclick="resetData()" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-400 hover:text-white transition">
+          Reset Data
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN ADMIN CONTENT -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 space-y-8 flex-1">
+
+    <!-- STATS OVERVIEW CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <div class="text-xs font-semibold text-slate-500 uppercase">Total Produk Aktif</div>
+          <div class="text-2xl font-extrabold text-slate-900 mt-1" id="statTotal">0</div>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-boxes-stacked"></i>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <div class="text-xs font-semibold text-slate-500 uppercase">Fokus Minggu Ini</div>
+          <div class="text-2xl font-extrabold text-amber-600 mt-1" id="statFocus">0</div>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-fire"></i>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <div class="text-xs font-semibold text-slate-500 uppercase">Kategori Material</div>
+          <div class="text-2xl font-extrabold text-emerald-600 mt-1">6 Kategori</div>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM TAMBAH / EDIT BARANG -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900" id="formHeaderTitle">Tambah Barang Baru</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Isi form di bawah untuk menambahkan material baru atau memperbarui harga.</p>
+        </div>
+        <button type="button" onclick="cancelEdit()" id="btnCancelEdit" class="hidden text-xs text-slate-500 hover:text-slate-800 font-semibold">
+          Batalkan Edit
+        </button>
+      </div>
+
+      <form id="productForm" onsubmit="handleFormSubmit(event)" class="space-y-5 text-sm">
+        <input type="hidden" id="editId" value="" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">Nama Barang / Material *</label>
+            <input type="text" id="nameInput" required placeholder="Contoh: Semen Gresik PPC 40kg" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs" />
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">Kategori *</label>
+            <select id="categoryInput" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs">
+              <option value="Semen & Mortar">Semen & Mortar</option>
+              <option value="Cat & Pelapis">Cat & Pelapis</option>
+              <option value="Baja & Besi">Baja & Besi</option>
+              <option value="Keramik & Granit">Keramik & Granit</option>
+              <option value="Pipa & Sanitari">Pipa & Sanitari</option>
+              <option value="Power Tools">Power Tools / Perkakas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">Harga Utama (IDR) *</label>
+            <input type="number" id="priceInput" required placeholder="65000" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs font-mono" />
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">Harga Coret (Sebelum Diskon)</label>
+            <input type="number" id="oldPriceInput" placeholder="75000 (opsional)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs font-mono" />
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">Fokus Minggu Ini?</label>
+            <select id="isFocusInput" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs">
+              <option value="false">Tidak (Katalog Biasa)</option>
+              <option value="true">★ YA (Tampilkan di Fokus Minggu Ini)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">Varian Barang (Ukuran / Kemasan & Harga Masing-Masing)</label>
+          <div class="text-[11px] text-slate-500 mb-1.5">
+            Format: <code>Nama Varian:Harga</code>, pisahkan dengan koma.<br/>
+            Contoh Semen: <code>Sak 40 Kg:54000, Sak 50 Kg:64500</code><br/>
+            Contoh Cat: <code>Galon 2.5L:345000, Pail 20L:2150000</code>
+          </div>
+          <input type="text" id="variantsInput" placeholder="Contoh: Sak 40 Kg:54000, Sak 50 Kg:64500" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs font-mono" />
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">URL Foto Barang</label>
+            <input type="url" id="imgInput" placeholder="https://images.unsplash.com/..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs" />
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 text-xs uppercase mb-1.5">Deskripsi Singkat</label>
+            <input type="text" id="descInput" placeholder="Material standar SNI dengan kualitas premium..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white transition text-xs" />
+          </div>
+        </div>
+
+        <div class="pt-3 flex items-center justify-end gap-3">
+          <button type="submit" id="btnSubmitForm" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition shadow-sm">
+            Simpan Barang
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- TABEL SEMUA BARANG (LIST & QUICK ACTIONS) -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 mb-4">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900">Daftar Barang & Harga Terdaftar</h2>
+          <p class="text-xs text-slate-500">Klik toggle Fokus untuk memindahkan barang ke banner minggu ini, atau Edit untuk mengubah harga.</p>
+        </div>
+
+        <!-- Search Table -->
+        <div class="w-full sm:w-64">
+          <input 
+            type="text" 
+            id="adminSearchInput" 
+            onkeyup="renderTable()" 
+            placeholder="Filter nama barang..." 
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs text-slate-800 focus:outline-none focus:border-amber-500"
+          />
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs text-slate-700">
+          <thead class="bg-slate-50 font-bold uppercase text-[10px] text-slate-500 border-b border-slate-200">
+            <tr>
+              <th class="py-3 px-3">Foto</th>
+              <th class="py-3 px-3">Nama Barang & Varian</th>
+              <th class="py-3 px-3">Kategori</th>
+              <th class="py-3 px-3 text-right">Harga Utama</th>
+              <th class="py-3 px-3 text-center">Fokus Minggu Ini?</th>
+              <th class="py-3 px-3 text-center">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody" class="divide-y divide-slate-100">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 text-xs">
+    <i class="fa-solid fa-circle-check text-emerald-400 text-base" id="toastIcon"></i>
+    <span id="toastMsg">Data berhasil disimpan.</span>
+  </div>
+
+  <!-- JAVASCRIPT: ADMIN OPERATIONS -->
+  <script>
+    const defaultProducts = [
+      {
+        id: "prod-1",
+        name: "Semen Gresik Portland Composite (PPC)",
+        category: "Semen & Mortar",
+        price: 64500,
+        oldPrice: 74000,
+        isFocus: true,
+        img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=80",
+        desc: "Semen PCC serbaguna standar SNI. Cocok untuk pasangan bata, plesteran, dan cor beton struktur.",
+        variants: [
+          { name: "Sak 40 Kg", price: 54000 },
+          { name: "Sak 50 Kg", price: 64500 }
+        ]
+      },
+      {
+        id: "prod-2",
+        name: "Cat Tembok Dulux Weathershield Exterior",
+        category: "Cat & Pelapis",
+        price: 345000,
+        oldPrice: 385000,
+        isFocus: true,
+        img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&auto=format&fit=crop&q=80",
+        desc: "Cat dinding luar dengan teknologi pelindung anti jamur, lumut, dan warna tahan pudar hingga 5 tahun.",
+        variants: [
+          { name: "Galon 2.5 Liter", price: 345000 },
+          { name: "Pail 20 Liter", price: 2150000 }
+        ]
+      },
+      {
+        id: "prod-3",
+        name: "Baja Ringan C75 Truss Ketebalan 0.75mm SNI",
+        category: "Baja & Besi",
+        price: 88500,
+        oldPrice: 98000,
+        isFocus: true,
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop&q=80",
+        desc: "Kanal C Zincalume 6 meter full standar SNI. Tahan karat dan kokoh untuk rangka atap genteng.",
+        variants: [
+          { name: "C75 x 0.75mm (6m)", price: 88500 },
+          { name: "C75 x 1.00mm (6m)", price: 118000 },
+          { name: "Reng 0.45mm (6m)", price: 43000 }
+        ]
+      },
+      {
+        id: "prod-4",
+        name: "Granit Tile 60x60 Glazed Polished Carrara",
+        category: "Keramik & Granit",
+        price: 185000,
+        oldPrice: 220000,
+        isFocus: true,
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80",
+        desc: "Granit motif marmer putih mewah dengan permukaan kilap halus dan presisi nat siku rapat.",
+        variants: [
+          { name: "1 Dus (1.44 m² / 4 Pcs)", price: 185000 },
+          { name: "1 Palet Grosir (40 Dus)", price: 7200000 }
+        ]
+      },
+      {
+        id: "prod-5",
+        name: "Pipa PVC Rucika Standard JIS Tipe AW",
+        category: "Pipa & Sanitari",
+        price: 75000,
+        oldPrice: null,
+        isFocus: false,
+        img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+        desc: "Pipa air bersih tahan tekanan tinggi, awet, dan bebas timbal untuk instalasi gedung.",
+        variants: [
+          { name: "Ukuran 1/2 Inch (4m)", price: 42000 },
+          { name: "Ukuran 3/4 Inch (4m)", price: 58000 },
+          { name: "Ukuran 1 Inch (4m)", price: 75000 },
+          { name: "Ukuran 2 Inch (4m)", price: 145000 }
+        ]
+      },
+      {
+        id: "prod-6",
+        name: "Mortar Instan MU-200 SkimWall Acian Plester",
+        category: "Semen & Mortar",
+        price: 92000,
+        oldPrice: null,
+        isFocus: false,
+        img: "https://images.unsplash.com/photo-1590496793929-36417d3117de?w=600&auto=format&fit=crop&q=80",
+        desc: "Semen instan siap pakai untuk acian dinding plesteran. Hasil halus dan tidak retak rambut.",
+        variants: [
+          { name: "Sak 40 Kg", price: 92000 }
+        ]
+      },
+      {
+        id: "prod-7",
+        name: "Cordless Rotary Hammer Drill 20V Heavy Duty",
+        category: "Power Tools",
+        price: 1150000,
+        oldPrice: 1350000,
+        isFocus: false,
+        img: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?w=600&auto=format&fit=crop&q=80",
+        desc: "Mesin bor beton tanpa kabel dengan motor brushless bertenaga tinggi, komplit 2 baterai.",
+        variants: [
+          { name: "Unit Only", price: 680000 },
+          { name: "Set 2 Baterai + Charger", price: 1150000 }
+        ]
+      },
+      {
+        id: "prod-8",
+        name: "Besi Beton Ulir SNI BjTS 420B Full 12mm",
+        category: "Baja & Besi",
+        price: 128000,
+        oldPrice: null,
+        isFocus: false,
+        img: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=600&auto=format&fit=crop&q=80",
+        desc: "Besi tulangan bersertifikat SNI panjang 12 meter utuh untuk struktur pondasi bangunan.",
+        variants: [
+          { name: "Diameter 10mm (12m)", price: 89000 },
+          { name: "Diameter 12mm (12m)", price: 128000 },
+          { name: "Diameter 16mm (12m)", price: 228000 }
+        ]
+      }
+    ];
+
+    let products = [];
+
+    function loadProducts() {
+      const saved = localStorage.getItem('megabuild_products');
+      if (saved) {
+        try {
+          products = JSON.parse(saved);
+        } catch (e) {
+          products = defaultProducts;
+        }
+      } else {
+        products = defaultProducts;
+        saveProducts();
+      }
+    }
+
+    function saveProducts() {
+      localStorage.setItem('megabuild_products', JSON.stringify(products));
+      updateStats();
+      renderTable();
+    }
+
+    function formatRupiah(num) {
+      return "Rp " + Number(num).toLocaleString('id-ID');
+    }
+
+    function updateStats() {
+      document.getElementById('statTotal').textContent = products.length;
+      document.getElementById('statFocus').textContent = products.filter(p => p.isFocus).length;
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      const search = document.getElementById('adminSearchInput').value.toLowerCase().trim();
+
+      const filtered = products.filter(p => p.name.toLowerCase().includes(search) || p.category.toLowerCase().includes(search));
+
+      tbody.innerHTML = filtered.map(p => `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="py-2.5 px-3">
+            <img src="${p.img}" class="w-10 h-10 object-cover rounded-lg border border-slate-200" />
+          </td>
+          <td class="py-2.5 px-3">
+            <div class="font-bold text-slate-900">${p.name}</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">
+              ${p.variants && p.variants.length > 0 ? p.variants.map(v => `${v.name} (${formatRupiah(v.price)})`).join(' • ') : 'Tanpa Varian'}
+            </div>
+          </td>
+          <td class="py-2.5 px-3 text-slate-600 font-medium">${p.category}</td>
+          <td class="py-2.5 px-3 text-right font-extrabold text-slate-900">${formatRupiah(p.price)}</td>
+          <td class="py-2.5 px-3 text-center">
+            <button onclick="toggleFocus('${p.id}')" class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase transition ${p.isFocus ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-slate-100 text-slate-400 border border-slate-200 hover:text-slate-600'}">
+              ${p.isFocus ? '★ FOKUS' : 'Biasa'}
+            </button>
+          </td>
+          <td class="py-2.5 px-3 text-center">
+            <div class="flex items-center justify-center gap-1.5">
+              <button onclick="editProduct('${p.id}')" class="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition" title="Edit">
+                Edit
+              </button>
+              <button onclick="deleteProduct('${p.id}')" class="px-2 py-1 rounded-md bg-red-50 hover:bg-red-100 text-red-600 transition" title="Hapus">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function toggleFocus(id) {
+      const p = products.find(item => item.id === id);
+      if (!p) return;
+      p.isFocus = !p.isFocus;
+      saveProducts();
+      showToast(p.isFocus ? `"${p.name}" sekarang ditampilkan di Fokus Minggu Ini.` : `"${p.name}" dinonaktifkan dari Fokus.`);
+    }
+
+    function editProduct(id) {
+      const p = products.find(item => item.id === id);
+      if (!p) return;
+
+      document.getElementById('editId').value = p.id;
+      document.getElementById('formHeaderTitle').textContent = `Edit Barang: ${p.name}`;
+      document.getElementById('btnSubmitForm').textContent = 'Perbarui Barang';
+      document.getElementById('btnCancelEdit').classList.remove('hidden');
+
+      document.getElementById('nameInput').value = p.name;
+      document.getElementById('categoryInput').value = p.category;
+      document.getElementById('priceInput').value = p.price;
+      document.getElementById('oldPriceInput').value = p.oldPrice || '';
+      document.getElementById('isFocusInput').value = p.isFocus ? 'true' : 'false';
+      document.getElementById('imgInput').value = p.img || '';
+      document.getElementById('descInput').value = p.desc || '';
+
+      if (p.variants && p.variants.length > 0) {
+        document.getElementById('variantsInput').value = p.variants.map(v => `${v.name}:${v.price}`).join(', ');
+      } else {
+        document.getElementById('variantsInput').value = '';
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function cancelEdit() {
+      document.getElementById('productForm').reset();
+      document.getElementById('editId').value = '';
+      document.getElementById('formHeaderTitle').textContent = 'Tambah Barang Baru';
+      document.getElementById('btnSubmitForm').textContent = 'Simpan Barang';
+      document.getElementById('btnCancelEdit').classList.add('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const editId = document.getElementById('editId').value;
+      const name = document.getElementById('nameInput').value.trim();
+      const category = document.getElementById('categoryInput').value;
+      const price = Number(document.getElementById('priceInput').value);
+      const oldPrice = document.getElementById('oldPriceInput').value ? Number(document.getElementById('oldPriceInput').value) : null;
+      const isFocus = document.getElementById('isFocusInput').value === 'true';
+      let img = document.getElementById('imgInput').value.trim();
+      const desc = document.getElementById('descInput').value.trim();
+      const variantsRaw = document.getElementById('variantsInput').value.trim();
+
+      if (!img) {
+        img = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop&q=80";
+      }
+
+      // Parse Variants
+      let variants = [];
+      if (variantsRaw) {
+        variantsRaw.split(',').forEach(item => {
+          const pair = item.split(':');
+          if (pair.length === 2) {
+            const vName = pair[0].trim();
+            const vPrice = Number(pair[1].trim());
+            if (vName && !isNaN(vPrice)) {
+              variants.push({ name: vName, price: vPrice });
+            }
+          }
+        });
+      }
+      if (variants.length === 0) {
+        variants = [{ name: "Standar", price: price }];
+      }
+
+      if (editId) {
+        const idx = products.findIndex(p => p.id === editId);
+        if (idx !== -1) {
+          products[idx] = { ...products[idx], name, category, price, oldPrice, isFocus, img, desc, variants };
+          showToast(`Barang "${name}" berhasil diperbarui!`);
+        }
+      } else {
+        const newProduct = {
+          id: "prod-" + Date.now(),
+          name, category, price, oldPrice, isFocus, img, desc, variants
+        };
+        products.unshift(newProduct);
+        showToast(`Barang baru "${name}" berhasil ditambahkan!`);
+      }
+
+      saveProducts();
+      cancelEdit();
+    }
+
+    function deleteProduct(id) {
+      const p = products.find(item => item.id === id);
+      if (!p) return;
+      if (confirm(`Hapus "${p.name}" dari sistem?`)) {
+        products = products.filter(item => item.id !== id);
+        saveProducts();
+        showToast(`"${p.name}" telah dihapus.`);
+      }
+    }
+
+    function resetData() {
+      if (confirm("Kembalikan seluruh data ke contoh awal default?")) {
+        products = JSON.parse(JSON.stringify(defaultProducts));
+        saveProducts();
+        cancelEdit();
+        showToast("Data berhasil di-reset ke default.");
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadProducts();
+      updateStats();
+      renderTable();
+    });
+  </script>
+</body>
+</html>

@@ -1,41 +1,35 @@
 <!DOCTYPE html>
-<html lang="id" class="dark scroll-smooth">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>MEGABUILD™ Supply Co. | Distributor & Toko Material Bangunan Modern</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEGABUILD Supply Co. | Toko Material Bangunan</title>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
           colors: {
             brand: {
-              yellow: '#FACC15',
-              amber: '#F59E0B',
-              orange: '#EA580C',
-              zinc: '#09090b',
-              surface: '#121214',
-              border: '#27272a'
+              primary: '#0f172a',    /* Sleek slate black */
+              accent: '#d97706',     /* Warm refined amber */
+              accentLight: '#fef3c7',
             }
-          },
-          fontFamily: {
-            display: ['Syne', 'sans-serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts: Syne (Ultra-modern Adidas/Off-White Display font) & Plus Jakarta Sans -->
+  <!-- Google Font: Plus Jakarta Sans (Clean Minimalist Modern) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -43,267 +37,156 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #09090b;
-      color: #f4f4f5;
+      background-color: #f8fafc;
+      color: #0f172a;
     }
-    .font-display {
-      font-family: 'Syne', sans-serif;
+    .clean-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      transition: all 0.2s ease;
     }
-    .font-mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
-    /* Streetwear Marquee Animation */
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-      display: flex;
-      width: 200%;
-      animation: marquee 22s linear infinite;
-    }
-    .animate-marquee:hover {
-      animation-play-state: paused;
-    }
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #09090b;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #27272a;
-      border-radius: 3px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #facc15;
-    }
-    /* Noise texture overlay */
-    .bg-grid-pattern {
-      background-size: 40px 40px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    }
-    .industrial-stripes {
-      background: repeating-linear-gradient(
-        -45deg,
-        #facc15,
-        #facc15 12px,
-        #09090b 12px,
-        #09090b 24px
-      );
-    }
-    .glass-card {
-      background: rgba(18, 18, 20, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .text-stroke {
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
-      color: transparent;
+    .clean-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
     }
   </style>
 </head>
 
-<body class="selection:bg-brand-yellow selection:text-black antialiased overflow-x-hidden min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col selection:bg-amber-100 selection:text-amber-900">
 
-  <!-- TOP INDUSTRIAL MARQUEE TICKER (Adidas/Streetwear Vibe) -->
-  <div class="bg-brand-yellow text-black text-xs font-black tracking-widest uppercase overflow-hidden py-1.5 border-b border-black select-none z-50">
-    <div class="animate-marquee whitespace-nowrap flex items-center gap-8">
-      <span>⚡ PROMO MATERIAL MINGGU INI: DISKON SEMEN & CAT HINGGA 25% ⚡</span>
-      <span>• GRATIS ONGKIR SE-JABODETABEK UNTUK PEMBELIAN > RP 5.000.000 •</span>
-      <span>⚡ 100% PRODUK SNI RESMI & BERGARANSI PABRIK ⚡</span>
-      <span>• LAYANAN PENGIRIMAN EKSPRES ARMADA TRUK & PICKUP SENDIRI •</span>
-      <span>⚡ MITRA RESMI KONTRAKTOR & TUKANG PROFESIONAL ⚡</span>
-      <!-- Duplicate for infinite seamless scroll -->
-      <span>⚡ PROMO MATERIAL MINGGU INI: DISKON SEMEN & CAT HINGGA 25% ⚡</span>
-      <span>• GRATIS ONGKIR SE-JABODETABEK UNTUK PEMBELIAN > RP 5.000.000 •</span>
-      <span>⚡ 100% PRODUK SNI RESMI & BERGARANSI PABRIK ⚡</span>
-      <span>• LAYANAN PENGIRIMAN EKSPRES ARMADA TRUK & PICKUP SENDIRI •</span>
-      <span>⚡ MITRA RESMI KONTRAKTOR & TUKANG PROFESIONAL ⚡</span>
+  <!-- TOP INFO BAR -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-amber-400 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+          Harga Distributor Resmi
+        </span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline">Buka: Senin – Sabtu (07.30 – 17.30 WIB)</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+          <span>WA: 0812-3456-7890</span>
+        </a>
+        <a href="#alamat" class="hover:text-amber-400 transition hidden sm:inline">Lokasi Toko</a>
+      </div>
     </div>
   </div>
 
-  <!-- MAIN NAVIGATION -->
-  <header class="sticky top-0 z-40 bg-zinc-950/85 backdrop-blur-xl border-b border-zinc-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+  <!-- MAIN NAVIGATION BAR (CLEAN & SPACIOUS) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-6">
       
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 bg-brand-yellow text-black flex items-center justify-center font-display font-black text-2xl tracking-tighter rounded-none shadow-[3px_3px_0px_0px_#ffffff] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-none transition-all">
-          MB
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center font-extrabold text-xl">
+          M
         </div>
-        <div class="flex flex-col">
-          <div class="flex items-center gap-1.5">
-            <span class="font-display font-black text-xl sm:text-2xl tracking-tighter text-white uppercase">MEGABUILD</span>
-            <span class="text-[10px] font-mono px-1.5 py-0.5 bg-zinc-800 text-brand-yellow font-bold uppercase rounded">SUPPLY CO.</span>
-          </div>
-          <span class="text-[11px] font-mono text-zinc-400 tracking-wider">MODERN BUILDING MATERIALS</span>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-tight">MEGABUILD</span>
+          <span class="text-[11px] font-medium text-slate-500 tracking-wider uppercase block">Toko Material Bangunan</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-xs uppercase font-extrabold tracking-wider text-zinc-300">
-        <a href="#focus" class="hover:text-brand-yellow transition flex items-center gap-1.5 text-brand-yellow">
-          <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#fokus" class="hover:text-amber-600 transition flex items-center gap-1 text-slate-900">
+          <span class="w-2 h-2 rounded-full bg-amber-500"></span>
           Fokus Minggu Ini
         </a>
-        <a href="#katalog" class="hover:text-brand-yellow transition">Katalog Produk</a>
-        <a href="#keunggulan" class="hover:text-brand-yellow transition">Kenapa Kami</a>
-        <a href="#alamat" class="hover:text-brand-yellow transition">Alamat & Gudang</a>
-        <a href="#kontak" class="hover:text-brand-yellow transition">Kontak Toko</a>
+        <a href="#katalog" class="hover:text-amber-600 transition">Katalog Produk</a>
+        <a href="#layanan" class="hover:text-amber-600 transition">Layanan</a>
+        <a href="#alamat" class="hover:text-amber-600 transition">Alamat & Kontak</a>
       </nav>
 
-      <!-- Action Buttons & Admin Portal Trigger -->
+      <!-- Action: Order via WhatsApp -->
       <div class="flex items-center gap-3">
-        <!-- Search Trigger Icon -->
-        <button onclick="focusSearch()" class="w-10 h-10 rounded-full border border-zinc-800 hover:border-zinc-700 bg-zinc-900/60 text-zinc-300 hover:text-white flex items-center justify-center transition" title="Cari Produk">
-          <i class="fa-solid fa-magnifying-glass text-sm"></i>
-        </button>
-
-        <!-- Admin Portal Trigger Button -->
-        <button onclick="openAdminModal()" class="px-3 py-2 rounded-md border border-brand-yellow/30 bg-brand-yellow/10 hover:bg-brand-yellow/20 text-brand-yellow text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition" title="Kelola Barang & Harga">
-          <i class="fa-solid fa-sliders"></i>
-          <span class="hidden sm:inline">Admin Mode</span>
-        </button>
-
-        <!-- Direct WhatsApp Order Button -->
-        <a href="https://wa.me/6281234567890?text=Halo%20Admin%20MEGABUILD,%20saya%20ingin%20tanya%20katalog%20material%20bangunan" target="_blank" class="px-4 py-2.5 bg-brand-yellow hover:bg-yellow-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 shadow-[3px_3px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-          <i class="fa-brands fa-whatsapp text-base"></i>
-          <span class="hidden lg:inline">Hubungi Sales</span>
+        <a href="https://wa.me/6281234567890?text=Halo%20Admin%20MEGABUILD,%20saya%20ingin%20tanya%20harga%20material" target="_blank" class="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition flex items-center gap-2 shadow-sm">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+          <span>Hubungi Sales</span>
         </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 border border-zinc-800 bg-zinc-900 text-white flex items-center justify-center">
-          <i class="fa-solid fa-bars-staggered"></i>
-        </button>
       </div>
 
-    </div>
-
-    <!-- Mobile Nav Drawer -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950 px-4 py-5 space-y-3 text-sm font-extrabold uppercase">
-      <a href="#focus" onclick="toggleMobileMenu()" class="block py-2 text-brand-yellow">🔥 Fokus Minggu Ini</a>
-      <a href="#katalog" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-white">Katalog Material & Varian</a>
-      <a href="#keunggulan" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-white">Layanan & Garansi</a>
-      <a href="#alamat" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-white">Alamat & Jam Buka</a>
-      <a href="#kontak" onclick="toggleMobileMenu()" class="block py-2 text-zinc-300 hover:text-white">Kontak WhatsApp & Telepon</a>
-      <div class="pt-2">
-        <button onclick="openAdminModal(); toggleMobileMenu();" class="w-full py-2.5 bg-zinc-900 border border-brand-yellow/30 text-brand-yellow font-mono text-xs font-bold uppercase rounded">
-          <i class="fa-solid fa-sliders mr-2"></i> Buka Admin Mode (Tambah/Ubah Harga)
-        </button>
-      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION (High-Contrast Editorial / Adidas Inspired) -->
-  <section class="relative bg-zinc-950 bg-grid-pattern border-b border-zinc-800/80 overflow-hidden py-16 lg:py-24">
-    <!-- Ambient Glows -->
-    <div class="absolute -top-40 right-0 w-[500px] h-[500px] bg-brand-yellow/10 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute -bottom-40 left-0 w-[500px] h-[500px] bg-brand-orange/10 rounded-full blur-[140px] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <!-- HERO SECTION (MINIMALIST & AIRY) -->
+  <section class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Hero Copy -->
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 border border-zinc-700/80 bg-zinc-900/90 text-xs font-mono uppercase tracking-wider text-zinc-300">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Gudang Suplai 2026 • Resmi SNI & Distributor Utama</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold">
+            <i class="fa-solid fa-truck-fast text-amber-600"></i>
+            Siap Kirim Armada Sendiri Se-Jabodetabek
           </div>
 
-          <h1 class="font-display font-black text-4xl sm:text-6xl xl:text-7xl tracking-tighter leading-[0.95] uppercase text-white">
-            BANGUN LEBIH <br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-amber-300 to-orange-400">KOKOH & PRESISI.</span>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Belanja Material Bangunan Lebih Mudah & Transparan.
           </h1>
 
-          <p class="text-zinc-400 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
-            Distributor grosir & retail material konstruksi terlengkap: Semen, Cat Premium, Baja Ringan, Granit, Pipa PVC, hingga Power Tools. Harga tangan pertama langsung pabrik dengan armada pengiriman cepat.
+          <p class="text-slate-600 text-base leading-relaxed max-w-xl">
+            Pusat pasokan semen, cat dinding, baja ringan, keramik, pipa PVC, dan perkakas proyek. Harga tangan pertama langsung pabrik dengan pilihan varian lengkap.
           </p>
 
-          <!-- Quick Action Buttons -->
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#focus" class="px-7 py-3.5 bg-brand-yellow hover:bg-yellow-400 text-black font-extrabold text-sm uppercase tracking-wider flex items-center gap-3 shadow-[4px_4px_0px_0px_#ffffff] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-              <span>Cek Produk Fokus</span>
-              <i class="fa-solid fa-arrow-right"></i>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#fokus" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition shadow-sm flex items-center gap-2">
+              <span>Lihat Fokus Minggu Ini</span>
+              <i class="fa-solid fa-arrow-down text-xs"></i>
             </a>
-            <a href="#katalog" class="px-7 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold text-sm uppercase tracking-wider border border-zinc-700 flex items-center gap-3 transition">
-              <i class="fa-solid fa-boxes-stacked text-zinc-400"></i>
-              <span>Semua Katalog</span>
+            <a href="#katalog" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition">
+              Buka Semua Katalog
             </a>
           </div>
 
-          <!-- Trust Badges Metrics -->
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-800/80 max-w-lg">
+          <!-- Simple 3-point Highlights -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-100 max-w-lg text-slate-700">
             <div>
-              <div class="font-display font-black text-2xl sm:text-3xl text-white">5.400+</div>
-              <div class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">Proyek Didukung</div>
+              <div class="font-extrabold text-2xl text-slate-900">100%</div>
+              <div class="text-xs text-slate-500 mt-0.5">Produk SNI Asli</div>
             </div>
             <div>
-              <div class="font-display font-black text-2xl sm:text-3xl text-brand-yellow">100%</div>
-              <div class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">Standar SNI</div>
+              <div class="font-extrabold text-2xl text-slate-900">5.000+</div>
+              <div class="text-xs text-slate-500 mt-0.5">Proyek Dilayani</div>
             </div>
             <div>
-              <div class="font-display font-black text-2xl sm:text-3xl text-white">&lt; 24 Jam</div>
-              <div class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">Kirim Se-Jabodetabek</div>
+              <div class="font-extrabold text-2xl text-slate-900">Same Day</div>
+              <div class="text-xs text-slate-500 mt-0.5">Pengiriman Cepat</div>
             </div>
           </div>
         </div>
 
-        <!-- Right Hero Visual Card -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative bg-zinc-900 border-2 border-zinc-800 p-6 shadow-2xl">
-            <!-- Top tag -->
-            <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
-              <span class="text-xs font-mono font-bold text-brand-yellow uppercase tracking-wider">
-                <i class="fa-solid fa-fire text-amber-500 mr-1.5"></i> PROMO UTAMA HARI INI
-              </span>
-              <span class="px-2 py-0.5 bg-red-500/20 text-red-400 border border-red-500/30 text-[10px] font-bold uppercase rounded">
-                HEMAT HINGGA 25%
-              </span>
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 text-xs text-slate-500">
+              <span class="font-semibold text-slate-700">Promo Utama Hari Ini</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Stok Ready</span>
             </div>
 
-            <!-- Hero Featured Product Preview -->
-            <div class="py-6 flex flex-col items-center text-center">
-              <div class="relative w-full h-52 bg-zinc-950 flex items-center justify-center border border-zinc-800/60 overflow-hidden mb-4 group">
-                <img 
-                  id="heroSpotlightImg" 
-                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=80" 
-                  alt="Spotlight Semen" 
-                  class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
-                <span class="absolute bottom-3 left-3 px-2 py-1 bg-black/80 backdrop-blur-md text-white text-[11px] font-mono font-bold border border-zinc-700">
-                  DISTRIBUTOR RESMI
-                </span>
-              </div>
+            <div class="mt-4 aspect-video rounded-xl overflow-hidden bg-white border border-slate-200">
+              <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=80" alt="Semen" class="w-full h-full object-cover" />
+            </div>
 
-              <div class="w-full text-left">
-                <div class="text-xs font-mono text-zinc-400 uppercase">Semen & Mortar Siap Pakai</div>
-                <h3 class="font-display font-black text-2xl text-white tracking-tight uppercase mt-0.5" id="heroSpotlightTitle">
-                  SEMEN PORTLAND COMPOSITE 50KG
-                </h3>
-                <p class="text-xs text-zinc-400 mt-1">Daya rekat kuat, tahan retak, cocok untuk struktur beton bertulang & plesteran dinding.</p>
-
-                <div class="mt-4 flex items-baseline justify-between pt-3 border-t border-zinc-800">
-                  <div>
-                    <span class="text-xs text-zinc-500 line-through">Rp 74.000</span>
-                    <div class="text-2xl font-black font-mono text-brand-yellow">Rp 64.500 <span class="text-xs font-normal text-zinc-400">/ Sak</span></div>
-                  </div>
-                  <button onclick="quickOrder('Semen Portland Composite 50kg', 'Rp 64.500')" class="px-4 py-2.5 bg-white hover:bg-zinc-200 text-black font-extrabold text-xs uppercase tracking-wider transition flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-green-600"></i>
-                    <span>Order Cepat</span>
-                  </button>
+            <div class="mt-4">
+              <span class="text-xs font-semibold text-amber-700 uppercase">Semen & Mortar</span>
+              <h3 class="text-lg font-bold text-slate-900 mt-0.5">Semen Gresik Portland Composite (PPC)</h3>
+              <p class="text-xs text-slate-500 mt-1">Daya rekat kuat dan tahan retak untuk cor beton, plesteran, dan pasang bata.</p>
+              
+              <div class="mt-4 flex items-center justify-between pt-3 border-t border-slate-200">
+                <div>
+                  <span class="text-xs text-slate-400 line-through">Rp 74.000</span>
+                  <div class="text-xl font-extrabold text-slate-900">Rp 64.500 <span class="text-xs font-normal text-slate-500">/ Sak</span></div>
                 </div>
+                <button onclick="orderWA('Semen Gresik PPC 50kg', 'Rp 64.500')" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition flex items-center gap-1.5">
+                  <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                  <span>Pesan Sekarang</span>
+                </button>
               </div>
             </div>
-
-            <!-- Industrial decorative bar -->
-            <div class="h-1.5 w-full industrial-stripes"></div>
           </div>
         </div>
 
@@ -311,252 +194,233 @@
     </div>
   </section>
 
-  <!-- SECTION: BARANG FOKUS MINGGU / HARI INI -->
-  <section id="focus" class="py-16 bg-zinc-900/60 border-b border-zinc-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- SECTION: BARANG FOKUS MINGGU INI -->
+  <section id="fokus" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
-          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-brand-yellow tracking-widest uppercase mb-1">
-            <i class="fa-solid fa-crosshairs text-brand-yellow"></i>
-            WEEKLY FOCUS & PRIORITY INVENTORY
-          </div>
-          <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight uppercase">
-            BARANG FOKUS <span class="text-brand-yellow">MINGGU INI</span>
+          <span class="text-xs font-bold text-amber-600 tracking-wider uppercase block">Penawaran Prioritas</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+            Barang Fokus Minggu Ini
           </h2>
-          <p class="text-zinc-400 text-sm max-w-xl mt-1">
-            Material dengan diskon kuantiti terbesar, stok melimpah di gudang, dan perputaran proyek tercepat minggu ini.
+          <p class="text-slate-600 text-sm mt-1">
+            Produk dengan kuota stok siap kirim terbesar dan harga khusus periode minggu ini.
           </p>
         </div>
-
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-mono text-zinc-400">Periode: <strong>25 Nov - 02 Des 2026</strong></span>
-          <button onclick="openAddProductModal(true)" class="hidden sm:flex px-3 py-1.5 text-xs font-mono font-bold bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 items-center gap-2 transition">
-            <i class="fa-solid fa-plus text-brand-yellow"></i>
-            <span>Set Barang Fokus</span>
-          </button>
+        <div class="text-xs text-slate-500 font-medium bg-white px-3 py-1.5 rounded-lg border border-slate-200 self-start sm:self-auto">
+          <i class="fa-regular fa-calendar-check text-amber-500 mr-1"></i> Update: <strong>Minggu Ini</strong>
         </div>
       </div>
 
-      <!-- Spotlight Grid Container -->
-      <div id="focusProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Rendered dynamically by JavaScript -->
+      <!-- Focus Grid -->
+      <div id="focusContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered dynamically -->
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION: KATALOG SEMUA PRODUK & LIVE FILTER -->
-  <section id="katalog" class="py-16 bg-zinc-950 border-b border-zinc-800 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- SECTION: KATALOG LENGKAP & VARIAN -->
+  <section id="katalog" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <!-- Section Header -->
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
-          <div class="text-xs font-mono font-bold text-zinc-400 tracking-widest uppercase mb-1">
-            ALL PRODUCT CATALOGUE
-          </div>
-          <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight uppercase">
-            KATALOG LENGKAP & <span class="text-brand-yellow">VARIAN</span>
+          <span class="text-xs font-bold text-slate-400 tracking-wider uppercase block">Daftar Material</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+            Katalog Produk & Varian
           </h2>
-          <p class="text-zinc-400 text-sm max-w-xl mt-1">
-            Pilih kategori material, bandingkan varian ukuran/kemasan, dan cek harga terupdate secara transparan.
+          <p class="text-slate-600 text-sm mt-1">
+            Klik tombol "Pilih Varian" pada produk untuk memilih ukuran atau kemasan yang dibutuhkan.
           </p>
         </div>
 
-        <!-- Add Product CTA for Admin -->
-        <button onclick="openAddProductModal(false)" class="self-start lg:self-auto px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-white border border-brand-yellow/40 hover:border-brand-yellow text-xs font-extrabold uppercase tracking-wider flex items-center gap-2 transition">
-          <i class="fa-solid fa-circle-plus text-brand-yellow text-sm"></i>
-          <span>Tambah Barang Baru</span>
-        </button>
-      </div>
-
-      <!-- Filter & Search Bar Container -->
-      <div class="bg-zinc-900/90 border border-zinc-800 p-4 mb-8 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-        
-        <!-- Category Filter Pills -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 text-xs font-bold uppercase no-scrollbar" id="categoryPills">
-          <button onclick="filterCategory('ALL', this)" class="cat-pill px-4 py-2 bg-brand-yellow text-black font-extrabold whitespace-nowrap transition">
-            Semua (ALL)
-          </button>
-          <button onclick="filterCategory('Semen & Mortar', this)" class="cat-pill px-4 py-2 bg-zinc-800 text-zinc-300 hover:text-white whitespace-nowrap transition">
-            Semen & Mortar
-          </button>
-          <button onclick="filterCategory('Cat & Pelapis', this)" class="cat-pill px-4 py-2 bg-zinc-800 text-zinc-300 hover:text-white whitespace-nowrap transition">
-            Cat & Pelapis
-          </button>
-          <button onclick="filterCategory('Baja & Besi', this)" class="cat-pill px-4 py-2 bg-zinc-800 text-zinc-300 hover:text-white whitespace-nowrap transition">
-            Baja Ringan & Besi
-          </button>
-          <button onclick="filterCategory('Keramik & Granit', this)" class="cat-pill px-4 py-2 bg-zinc-800 text-zinc-300 hover:text-white whitespace-nowrap transition">
-            Keramik & Granit
-          </button>
-          <button onclick="filterCategory('Pipa & Sanitari', this)" class="cat-pill px-4 py-2 bg-zinc-800 text-zinc-300 hover:text-white whitespace-nowrap transition">
-            Pipa & Sanitari
-          </button>
-          <button onclick="filterCategory('Power Tools', this)" class="cat-pill px-4 py-2 bg-zinc-800 text-zinc-300 hover:text-white whitespace-nowrap transition">
-            Perkakas / Tools
-          </button>
-        </div>
-
-        <!-- Search Input -->
-        <div class="relative min-w-[260px]">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
+        <!-- Search Bar -->
+        <div class="relative w-full sm:w-72">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
           <input 
             type="text" 
             id="searchInput" 
-            onkeyup="searchProducts()" 
-            placeholder="Cari semen, pipa, cat, varian..." 
-            class="w-full bg-zinc-950 border border-zinc-700/80 rounded-none pl-9 pr-4 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-yellow transition"
+            onkeyup="renderCatalog()" 
+            placeholder="Cari semen, cat, pipa, besi..." 
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 transition"
           />
         </div>
+      </div>
 
+      <!-- Clean Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 text-xs font-semibold" id="categoryFilters">
+        <button onclick="setCategory('ALL', this)" class="cat-pill px-4 py-2 rounded-xl bg-slate-900 text-white whitespace-nowrap transition">
+          Semua Produk
+        </button>
+        <button onclick="setCategory('Semen & Mortar', this)" class="cat-pill px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+          Semen & Mortar
+        </button>
+        <button onclick="setCategory('Cat & Pelapis', this)" class="cat-pill px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+          Cat & Pelapis
+        </button>
+        <button onclick="setCategory('Baja & Besi', this)" class="cat-pill px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+          Baja Ringan & Besi
+        </button>
+        <button onclick="setCategory('Keramik & Granit', this)" class="cat-pill px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+          Keramik & Granit
+        </button>
+        <button onclick="setCategory('Pipa & Sanitari', this)" class="cat-pill px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+          Pipa & Sanitari
+        </button>
+        <button onclick="setCategory('Power Tools', this)" class="cat-pill px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition">
+          Perkakas / Tools
+        </button>
       </div>
 
       <!-- Main Products Grid -->
-      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <!-- Rendered dynamically via JavaScript -->
+      <div id="catalogContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Rendered dynamically -->
       </div>
 
-      <!-- Empty State -->
-      <div id="noProductsFound" class="hidden py-16 text-center border border-dashed border-zinc-800">
-        <i class="fa-solid fa-triangle-exclamation text-3xl text-brand-yellow mb-3"></i>
-        <h3 class="font-display font-bold text-lg text-white uppercase">Barang Tidak Ditemukan</h3>
-        <p class="text-xs text-zinc-400 mt-1">Coba kata kunci lain atau pilih kategori "Semua (ALL)".</p>
+      <!-- No items found alert -->
+      <div id="notFoundMsg" class="hidden py-16 text-center text-slate-400">
+        <i class="fa-solid fa-box-open text-3xl mb-2 text-slate-300"></i>
+        <p class="text-sm">Tidak ada barang yang cocok dengan pencarian Anda.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION: KEUNGGULAN TOKO (STREETWEAR STYLE GRID) -->
-  <section id="keunggulan" class="py-16 bg-zinc-900/40 border-b border-zinc-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- SECTION: LAYANAN & KEUNGGULAN (CLEAN & SIMPLE) -->
+  <section id="layanan" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-mono font-bold text-brand-yellow tracking-widest uppercase">STANDAR DISTRIBUTOR UTAMA</span>
-        <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight uppercase mt-1">
-          KENAPA KONTRAKTOR MEMILIH <span class="text-brand-yellow">MEGABUILD?</span>
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold text-amber-600 tracking-wider uppercase">Layanan Kami</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Mengapa Belanja di MEGABUILD?
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="bg-zinc-900 border border-zinc-800 p-8 relative overflow-hidden group hover:border-brand-yellow/40 transition">
-          <div class="text-4xl text-brand-yellow font-display font-black mb-4">01.</div>
-          <h3 class="font-display font-bold text-xl text-white uppercase tracking-tight">HARGA GROSIR & TRANSPARAN</h3>
-          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
-            Harga tangan pertama distributor resmi tanpa markup tersembunyi. Tersedia potongan diskon tiering untuk pembelian proyek dan agen toko bangunan retail.
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg mb-4">
+            <i class="fa-solid fa-tags"></i>
+          </div>
+          <h3 class="font-bold text-base text-slate-900">Harga Grosir Transparan</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Harga tangan pertama dari distributor resmi pabrik tanpa perantara. Tersedia diskon bertingkat untuk pembelian partai besar atau rutin.
           </p>
         </div>
 
-        <div class="bg-zinc-900 border border-zinc-800 p-8 relative overflow-hidden group hover:border-brand-yellow/40 transition">
-          <div class="text-4xl text-brand-yellow font-display font-black mb-4">02.</div>
-          <h3 class="font-display font-bold text-xl text-white uppercase tracking-tight">ARMADA TRUK PRIBADI</h3>
-          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
-            Didukung armada truk CDD, engkel, dan pickup operasional sendiri. Menjamin pengiriman material tiba tepat waktu di lokasi proyek tanpa bergantung ekspedisi luar.
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-lg mb-4">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+          </div>
+          <h3 class="font-bold text-base text-slate-900">Armada Truk & Pickup Mandiri</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Pengiriman langsung menggunakan armada toko sendiri untuk menjamin pesanan tiba dengan aman, rapi, dan tepat waktu di lokasi proyek.
           </p>
         </div>
 
-        <div class="bg-zinc-900 border border-zinc-800 p-8 relative overflow-hidden group hover:border-brand-yellow/40 transition">
-          <div class="text-4xl text-brand-yellow font-display font-black mb-4">03.</div>
-          <h3 class="font-display font-bold text-xl text-white uppercase tracking-tight">JAMINAN 100% PRODUK ASLI</h3>
-          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
-            Seluruh material besi beton ber-SNI gemuk, semen kondisi fresh dari pabrik (tidak mengeras), dan cat bergaransi tinting resmi dari brand principal terkemuka.
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg mb-4">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3 class="font-bold text-base text-slate-900">Jaminan Kualitas 100% SNI</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Semua besi, baja ringan, semen, dan pipa bersertifikasi resmi SNI dengan standar ketebalan murni sesuai spesifikasi teknis.
           </p>
         </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION: ALAMAT GUDANG & PETA (DUMMY DATA DETAIL) -->
-  <section id="alamat" class="py-16 bg-zinc-950 border-b border-zinc-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- SECTION: ALAMAT, KONTAK & MEDIA SOSIAL (DUMMY DATA) -->
+  <section id="alamat" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Left: Address Information -->
-        <div class="lg:col-span-5 bg-zinc-900 border border-zinc-800 p-8 flex flex-col justify-between">
+        <!-- Left: Address & Contact Details -->
+        <div class="lg:col-span-6 space-y-6">
           <div>
-            <div class="text-xs font-mono font-bold text-brand-yellow tracking-widest uppercase mb-1">
-              STORE LOCATION & CENTRAL WAREHOUSE
-            </div>
-            <h2 class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight uppercase">
-              ALAMAT TOKO & <br/><span class="text-brand-yellow">PUSAT GUDANG</span>
+            <span class="text-xs font-bold text-amber-600 tracking-wider uppercase">Lokasi & Kontak</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+              Kunjungi Toko & Gudang Kami
             </h2>
-            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
-              Kunjungi showroom kami untuk melihat langsung sampel keramik, granit, katalog warna cat dinding, dan konsultasi kebutuhan material proyek.
+            <p class="text-slate-600 text-sm mt-1">
+              Silakan datang langsung ke showroom untuk melihat katalog fisik granit, cat, dan konsultasi kebutuhan material proyek.
             </p>
-
-            <div class="mt-6 space-y-4 text-xs text-zinc-300">
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 bg-zinc-800 flex items-center justify-center text-brand-yellow shrink-0">
-                  <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div>
-                  <strong class="text-white block text-sm">MEGABUILD Main Warehouse (Dummy):</strong>
-                  <span>Kawasan Niaga & Industri Megabuild Blok C No. 88-90, Jl. Daan Mogot KM 14, Kalideres, Jakarta Barat 11840</span>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 bg-zinc-800 flex items-center justify-center text-brand-yellow shrink-0">
-                  <i class="fa-regular fa-clock"></i>
-                </div>
-                <div>
-                  <strong class="text-white block text-sm">Jam Operasional:</strong>
-                  <span>Senin – Sabtu: <strong>07.30 – 17.30 WIB</strong></span><br/>
-                  <span>Minggu & Hari Libur: <strong>08.00 – 15.00 WIB</strong></span>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 bg-zinc-800 flex items-center justify-center text-brand-yellow shrink-0">
-                  <i class="fa-solid fa-truck-ramp-box"></i>
-                </div>
-                <div>
-                  <strong class="text-white block text-sm">Bongkar Muat Armada:</strong>
-                  <span>Akses trailer 40ft & armada truk 24 jam dengan fasilitas fork-lift gudang.</span>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <!-- Directions Action Button -->
-          <div class="pt-6 mt-6 border-t border-zinc-800 flex items-center gap-3">
-            <a href="https://maps.google.com" target="_blank" class="px-5 py-3 bg-white hover:bg-zinc-200 text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 transition">
-              <i class="fa-solid fa-map-location-dot"></i>
-              <span>Petunjuk Arah (Maps)</span>
-            </a>
-            <button onclick="copyAddress()" class="px-4 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-xs uppercase transition" id="copyAddrBtn">
-              <i class="fa-regular fa-copy mr-1"></i> Salin Alamat
-            </button>
+          <div class="space-y-4 text-sm text-slate-700">
+            <!-- Address Card -->
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="flex-1">
+                <strong class="text-slate-900 block text-xs uppercase font-bold text-slate-500 mb-0.5">Alamat Gudang (Data Dummy):</strong>
+                <p class="text-slate-800 text-sm leading-relaxed">
+                  Kawasan Niaga & Industri Megabuild Blok C No. 88-90, Jl. Daan Mogot KM 14, Kalideres, Jakarta Barat 11840
+                </p>
+                <button onclick="copyAddress()" class="mt-2 text-xs font-semibold text-amber-700 hover:text-amber-800 flex items-center gap-1" id="copyBtn">
+                  <i class="fa-regular fa-copy"></i>
+                  <span>Salin Alamat</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Hours Card -->
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div>
+                <strong class="text-slate-900 block text-xs uppercase font-bold text-slate-500 mb-0.5">Jam Operasional:</strong>
+                <div class="text-xs text-slate-700 space-y-0.5">
+                  <div>Senin – Sabtu: <strong>07.30 – 17.30 WIB</strong></div>
+                  <div>Minggu & Hari Libur: <strong>08.00 – 15.00 WIB</strong></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media & Contact Links -->
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50">
+              <strong class="text-slate-900 block text-xs uppercase font-bold text-slate-500 mb-2">Media Sosial & Chat:</strong>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <a href="https://instagram.com" target="_blank" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-slate-300 text-slate-700 font-medium flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-instagram text-pink-600"></i>
+                  <span>@megabuild.id</span>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-slate-300 text-slate-700 font-medium flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-tiktok text-slate-900"></i>
+                  <span>@megabuildsupply</span>
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 font-medium flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-whatsapp text-emerald-600"></i>
+                  <span>0812-3456-7890</span>
+                </a>
+                <a href="tel:+62215558899" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-slate-300 text-slate-700 font-medium flex items-center gap-1.5 transition">
+                  <i class="fa-solid fa-phone text-slate-600"></i>
+                  <span>(021) 555-8899</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Right: Interactive Map Mockup -->
-        <div class="lg:col-span-7 bg-zinc-900 border border-zinc-800 relative overflow-hidden min-h-[350px] flex flex-col">
-          <div class="bg-zinc-800/80 px-4 py-2 border-b border-zinc-700 flex items-center justify-between text-xs font-mono text-zinc-400">
-            <span><i class="fa-solid fa-satellite mr-1.5 text-brand-yellow"></i> Google Maps Satellite Preview</span>
-            <span class="text-emerald-400 font-bold">• TOKO SEDANG BUKA HARI INI</span>
-          </div>
-          
-          <div class="relative flex-1 bg-zinc-950 flex items-center justify-center overflow-hidden">
-            <!-- Simulated stylized dark map iframe -->
+        <!-- Right: Interactive Map Preview -->
+        <div class="lg:col-span-6 h-full">
+          <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-100 h-80 lg:h-[380px] relative">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126938.8576426868!2d106.689431!3d-6.155823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f80a424e4d5d%3A0xc3f8e5f22f12f94!2sJakarta%20Barat!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-              class="w-full h-full border-0 filter invert contrast-125 opacity-70" 
+              class="w-full h-full border-0" 
               allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
+              loading="lazy">
             </iframe>
-
-            <!-- Overlay Floating Pin Badge -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none bg-black/90 backdrop-blur-md border border-brand-yellow p-3 text-center shadow-2xl">
-              <i class="fa-solid fa-warehouse text-2xl text-brand-yellow animate-bounce"></i>
-              <div class="font-display font-black text-sm text-white uppercase mt-1">MEGABUILD™ HQ</div>
-              <div class="text-[10px] font-mono text-zinc-400">Gudang & Showroom Utama</div>
+            
+            <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-800 shadow-sm">
+              <i class="fa-solid fa-location-dot text-amber-600 mr-1"></i> Area Daan Mogot, Jakarta Barat
             </div>
           </div>
         </div>
@@ -566,399 +430,73 @@
     </div>
   </section>
 
-  <!-- SECTION: SOCIAL MEDIA & INSTAGRAM FEED SHOWCASE -->
-  <section class="py-16 bg-zinc-900/60 border-b border-zinc-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-        <div>
-          <span class="text-xs font-mono font-bold text-brand-yellow tracking-widest uppercase">FOLLOW OUR SOCIALS</span>
-          <h2 class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight uppercase">
-            UPDATE PROYEK & FEED <span class="text-brand-yellow">@MEGABUILD.ID</span>
-          </h2>
-        </div>
-        <div class="flex items-center gap-3">
-          <a href="https://instagram.com" target="_blank" class="px-4 py-2 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-            <i class="fa-brands fa-instagram text-sm"></i>
-            <span>Follow Instagram</span>
-          </a>
-          <a href="https://tiktok.com" target="_blank" class="px-4 py-2 bg-black border border-zinc-700 hover:border-white text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-            <i class="fa-brands fa-tiktok text-sm"></i>
-            <span>TikTok</span>
-          </a>
-        </div>
+  <!-- SIMPLE & CLEAN FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-10 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-bold text-white">MEGABUILD Supply Co.</span> &copy; 2026 • Toko Material Bangunan Modern
       </div>
-
-      <!-- Dummy Instagram / Showcase Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div class="relative group aspect-square overflow-hidden bg-zinc-950 border border-zinc-800">
-          <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?w=400&auto=format&fit=crop&q=80" alt="Insta 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 opacity-80" />
-          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-brand-yellow text-sm font-mono font-bold">
-            <i class="fa-brands fa-instagram mr-1.5"></i> #ProyekSemen
-          </div>
-        </div>
-
-        <div class="relative group aspect-square overflow-hidden bg-zinc-950 border border-zinc-800">
-          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&auto=format&fit=crop&q=80" alt="Insta 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 opacity-80" />
-          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-brand-yellow text-sm font-mono font-bold">
-            <i class="fa-brands fa-instagram mr-1.5"></i> #CatRumah
-          </div>
-        </div>
-
-        <div class="relative group aspect-square overflow-hidden bg-zinc-950 border border-zinc-800">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&auto=format&fit=crop&q=80" alt="Insta 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 opacity-80" />
-          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-brand-yellow text-sm font-mono font-bold">
-            <i class="fa-brands fa-instagram mr-1.5"></i> #BajaRingan
-          </div>
-        </div>
-
-        <div class="relative group aspect-square overflow-hidden bg-zinc-950 border border-zinc-800">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&auto=format&fit=crop&q=80" alt="Insta 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 opacity-80" />
-          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-brand-yellow text-sm font-mono font-bold">
-            <i class="fa-brands fa-instagram mr-1.5"></i> #GranitLantai
-          </div>
-        </div>
-
-        <div class="relative group aspect-square overflow-hidden bg-zinc-950 border border-zinc-800">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&auto=format&fit=crop&q=80" alt="Insta 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 opacity-80" />
-          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-brand-yellow text-sm font-mono font-bold">
-            <i class="fa-brands fa-instagram mr-1.5"></i> #PipaPVC
-          </div>
-        </div>
-
-        <div class="relative group aspect-square overflow-hidden bg-zinc-950 border border-zinc-800">
-          <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32b?w=400&auto=format&fit=crop&q=80" alt="Insta 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 opacity-80" />
-          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-brand-yellow text-sm font-mono font-bold">
-            <i class="fa-brands fa-instagram mr-1.5"></i> #PowerTools
-          </div>
-        </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="#katalog" class="hover:text-white transition">Katalog</a>
+        <span>•</span>
+        <a href="#fokus" class="hover:text-white transition">Fokus Promo</a>
+        <span>•</span>
+        <a href="#alamat" class="hover:text-white transition">Alamat</a>
+        <span>•</span>
+        <!-- Discrete link to Admin Portal -->
+        <a href="admin.html" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold transition flex items-center gap-1.5" title="Buka Portal Khusus Pengelola/Admin">
+          <i class="fa-solid fa-lock text-[10px]"></i>
+          <span>Portal Admin</span>
+        </a>
       </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION: KONTAK & HOTLINE PEMESANAN -->
-  <section id="kontak" class="py-16 bg-zinc-950 border-b border-zinc-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="bg-gradient-to-br from-zinc-900 via-zinc-900 to-black border-2 border-brand-yellow/30 p-8 sm:p-12 relative overflow-hidden">
-        <div class="absolute -right-20 -top-20 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div class="lg:col-span-8 space-y-3">
-            <span class="text-xs font-mono font-bold text-brand-yellow tracking-widest uppercase">FAST-RESPONSE SALES DESK</span>
-            <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight uppercase">
-              BUTUH PENAWARAN HARGA PROYEK & R.A.B?
-            </h2>
-            <p class="text-zinc-400 text-sm max-w-xl">
-              Kirimkan daftar rencana belanja material Anda langsung ke tim sales via WhatsApp. Kami hitungkan estimasi volume, rekomendasi varian, dan diskon kuantiti proyek dalam 15 menit.
-            </p>
-          </div>
-
-          <div class="lg:col-span-4 flex flex-col gap-3">
-            <a href="https://wa.me/6281234567890?text=Halo%20Admin%20MEGABUILD,%20saya%20ingin%20minta%20estimasi%20penawaran%20harga%20RAB%20material" target="_blank" class="w-full py-4 bg-brand-yellow hover:bg-yellow-400 text-black font-extrabold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-3 transition shadow-[3px_3px_0px_0px_#ffffff]">
-              <i class="fa-brands fa-whatsapp text-lg"></i>
-              <span>Chat WhatsApp Sales (0812-3456-7890)</span>
-            </a>
-            <a href="tel:+62215558899" class="w-full py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-mono text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition">
-              <i class="fa-solid fa-phone"></i>
-              <span>Hotline Kantor: (021) 555-8899</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-black text-zinc-400 text-xs py-12 border-t border-zinc-900 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-zinc-800">
-        
-        <div class="space-y-3">
-          <div class="flex items-center gap-2">
-            <div class="w-7 h-7 bg-brand-yellow text-black flex items-center justify-center font-display font-black text-sm">MB</div>
-            <span class="font-display font-black text-lg text-white uppercase tracking-tight">MEGABUILD™</span>
-          </div>
-          <p class="text-[11px] leading-relaxed text-zinc-500">
-            Pusat penyedia material konstruksi & peralatan tukang terpercaya sejak 2012. Mendukung pembangunan rumah tinggal, ruko, gedung, hingga infrastruktur nasional.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-mono font-bold text-white uppercase mb-3 text-xs tracking-wider">Kategori Unggulan</h4>
-          <ul class="space-y-1.5 text-zinc-500 text-[11px]">
-            <li><a href="#katalog" class="hover:text-brand-yellow">Semen Portland & Mortar Instan</a></li>
-            <li><a href="#katalog" class="hover:text-brand-yellow">Cat Tembok Interior & Eksterior</a></li>
-            <li><a href="#katalog" class="hover:text-brand-yellow">Baja Ringan C75 & Besi Beton SNI</a></li>
-            <li><a href="#katalog" class="hover:text-brand-yellow">Granit Tile 60x60 & Sanitair</a></li>
-            <li><a href="#katalog" class="hover:text-brand-yellow">Pipa PVC Air Bersih & Limbah</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-mono font-bold text-white uppercase mb-3 text-xs tracking-wider">Jejaring Sosial</h4>
-          <ul class="space-y-1.5 text-zinc-500 text-[11px]">
-            <li><a href="https://instagram.com" target="_blank" class="hover:text-brand-yellow"><i class="fa-brands fa-instagram w-4"></i> Instagram: @megabuild.id</a></li>
-            <li><a href="https://tiktok.com" target="_blank" class="hover:text-brand-yellow"><i class="fa-brands fa-tiktok w-4"></i> TikTok: @megabuildsupply</a></li>
-            <li><a href="https://facebook.com" target="_blank" class="hover:text-brand-yellow"><i class="fa-brands fa-facebook w-4"></i> Facebook: MegaBuild Supply</a></li>
-            <li><a href="https://youtube.com" target="_blank" class="hover:text-brand-yellow"><i class="fa-brands fa-youtube w-4"></i> YouTube: MegaBuild Tukang TV</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-mono font-bold text-white uppercase mb-3 text-xs tracking-wider">Akses Manajemen</h4>
-          <p class="text-[11px] text-zinc-500 mb-3">Kelola barang fokus, update harga, dan input varian baru toko:</p>
-          <button onclick="openAdminModal()" class="px-3.5 py-2 bg-zinc-900 border border-zinc-700 hover:border-brand-yellow text-brand-yellow font-mono text-[11px] uppercase tracking-wider flex items-center gap-2 transition">
-            <i class="fa-solid fa-lock"></i>
-            <span>Buka Dashboard Admin</span>
-          </button>
-        </div>
-
-      </div>
-
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-600">
-        <div>
-          &copy; 2026 MEGABUILD™ Supply Co. All Rights Reserved. Prototype Dummy Store.
-        </div>
-        <div class="flex items-center gap-4">
-          <button onclick="resetDefaultData()" class="hover:text-zinc-400 underline">Reset Demo Data</button>
-          <span>•</span>
-          <span>Bisa Dibuka di Desktop & Mobile Phone</span>
-        </div>
-      </div>
-
     </div>
   </footer>
 
-  <!-- FLOATING BOTTOM BAR FOR MOBILE PHONES -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800 p-2 flex items-center justify-around text-[10px] font-mono font-bold uppercase text-zinc-400">
-    <a href="#focus" class="flex flex-col items-center gap-1 text-brand-yellow">
-      <i class="fa-solid fa-fire text-sm"></i>
-      <span>Fokus</span>
-    </a>
-    <a href="#katalog" class="flex flex-col items-center gap-1 hover:text-white">
-      <i class="fa-solid fa-boxes-stacked text-sm"></i>
-      <span>Katalog</span>
-    </a>
-    <button onclick="openAdminModal()" class="flex flex-col items-center gap-1 hover:text-white text-zinc-300">
-      <i class="fa-solid fa-sliders text-sm"></i>
-      <span>Admin</span>
-    </button>
-    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20MEGABUILD,%20saya%20mau%20tanya%20barang" target="_blank" class="flex flex-col items-center gap-1 text-green-400">
-      <i class="fa-brands fa-whatsapp text-sm"></i>
-      <span>WhatsApp</span>
-    </a>
-  </div>
-
-  <!-- MODAL: DETAIL BARANG & PEMILIHAN VARIAN -->
-  <div id="productDetailModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-zinc-900 border-2 border-zinc-700 max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative">
-      <button onclick="closeDetailModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl">
+  <!-- MODAL: DETAIL PRODUK & PILIH VARIAN -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border border-slate-200 max-w-lg w-full p-6 relative shadow-xl">
+      <button onclick="closeDetailModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Product Modal Image -->
-        <div class="bg-zinc-950 border border-zinc-800 flex items-center justify-center p-2 h-64 overflow-hidden">
-          <img id="detailImg" src="" alt="Detail" class="w-full h-full object-cover" />
-        </div>
-
-        <!-- Product Modal Information -->
-        <div class="flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2">
-              <span id="detailCategory" class="px-2 py-0.5 bg-zinc-800 text-brand-yellow font-mono text-[10px] uppercase font-bold">Kategori</span>
-              <span id="detailBadge" class="px-2 py-0.5 bg-red-500/20 text-red-400 text-[10px] font-bold uppercase">PROMO</span>
-            </div>
-            
-            <h3 id="detailTitle" class="font-display font-black text-2xl text-white uppercase mt-2">Nama Barang</h3>
-            <p id="detailDesc" class="text-xs text-zinc-400 mt-2 leading-relaxed">Deskripsi lengkap barang.</p>
-
-            <!-- Varian Selector -->
-            <div class="mt-4 pt-3 border-t border-zinc-800">
-              <label class="block text-xs font-mono font-bold text-zinc-300 uppercase mb-2">
-                Pilih Varian (Ukuran / Kemasan):
-              </label>
-              <div id="detailVariantsContainer" class="flex flex-wrap gap-2">
-                <!-- Variant chips dynamically rendered -->
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-zinc-800">
-            <div class="text-[11px] text-zinc-500 font-mono">HARGA VARIAN TERPILIH:</div>
-            <div id="detailSelectedPrice" class="font-display font-black text-2xl text-brand-yellow font-mono">Rp 0</div>
-
-            <div class="mt-3 flex items-center gap-3">
-              <button onclick="orderSelectedVariantWA()" class="flex-1 py-3 bg-brand-yellow hover:bg-yellow-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-[2px_2px_0px_0px_#ffffff]">
-                <i class="fa-brands fa-whatsapp text-base"></i>
-                <span>Order Varian via WA</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- MODAL: ADMIN PORTAL (TAMBAH / EDIT BARANG & HARGA) -->
-  <div id="adminModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-zinc-900 border-2 border-brand-yellow max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative">
-      
-      <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-sliders text-brand-yellow text-lg"></i>
-          <div>
-            <h3 class="font-display font-black text-xl text-white uppercase tracking-tight">MANAJEMEN BARANG & HARGA TOKO</h3>
-            <span class="text-[11px] font-mono text-zinc-400">ADMIN MODE • UBAH HARGA, STOK, DAN TAMBAH VARIAN BARU</span>
-          </div>
-        </div>
-        <button onclick="closeAdminModal()" class="text-zinc-400 hover:text-white text-xl">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <!-- Admin Actions Toolbar -->
-      <div class="py-4 flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800">
-        <div class="text-xs font-mono text-zinc-300">
-          Total Barang Terdaftar: <strong id="adminTotalCount" class="text-brand-yellow">0</strong>
-        </div>
-        <div class="flex items-center gap-2">
-          <button onclick="openAddProductModal(false)" class="px-3.5 py-1.5 bg-brand-yellow hover:bg-yellow-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-1.5 transition">
-            <i class="fa-solid fa-plus"></i>
-            <span>Tambah Barang Baru</span>
-          </button>
-          <button onclick="resetDefaultData()" class="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-mono uppercase">
-            Reset Demo
-          </button>
-        </div>
-      </div>
-
-      <!-- Admin Product Quick Table -->
-      <div class="mt-4 overflow-x-auto">
-        <table class="w-full text-left text-xs text-zinc-300">
-          <thead class="bg-zinc-950 font-mono font-bold text-zinc-400 uppercase text-[10px] border-b border-zinc-800">
-            <tr>
-              <th class="p-2.5">Foto</th>
-              <th class="p-2.5">Nama Barang</th>
-              <th class="p-2.5">Kategori</th>
-              <th class="p-2.5 text-right">Harga Utama</th>
-              <th class="p-2.5 text-center">Fokus Mgg Ini</th>
-              <th class="p-2.5 text-center">Aksi</th>
-            </tr>
-          </thead>
-          <tbody id="adminProductsTable" class="divide-y divide-zinc-800/80 font-medium">
-            <!-- Dynamically populated -->
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- MODAL: FORM TAMBAH / EDIT BARANG -->
-  <div id="productFormModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-zinc-900 border-2 border-zinc-700 max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative">
-      <button onclick="closeProductFormModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <h3 id="formModalTitle" class="font-display font-black text-xl text-white uppercase tracking-tight mb-4">
-        TAMBAH BARANG BARU
-      </h3>
-
-      <form id="productForm" onsubmit="handleProductFormSubmit(event)" class="space-y-4 text-xs">
-        <input type="hidden" id="editProductId" value="" />
-
-        <div>
-          <label class="block font-mono font-bold text-zinc-300 uppercase mb-1">Nama Barang *</label>
-          <input type="text" id="formName" required placeholder="Contoh: Semen Gresik PPC 40kg" class="w-full bg-zinc-950 border border-zinc-700 p-2.5 text-white focus:outline-none focus:border-brand-yellow" />
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-mono font-bold text-zinc-300 uppercase mb-1">Kategori *</label>
-            <select id="formCategory" class="w-full bg-zinc-950 border border-zinc-700 p-2.5 text-white focus:outline-none focus:border-brand-yellow">
-              <option value="Semen & Mortar">Semen & Mortar</option>
-              <option value="Cat & Pelapis">Cat & Pelapis</option>
-              <option value="Baja & Besi">Baja & Besi</option>
-              <option value="Keramik & Granit">Keramik & Granit</option>
-              <option value="Pipa & Sanitari">Pipa & Sanitari</option>
-              <option value="Power Tools">Power Tools / Perkakas</option>
-            </select>
-          </div>
-          <div>
-            <label class="block font-mono font-bold text-zinc-300 uppercase mb-1">Harga Utama (IDR) *</label>
-            <input type="number" id="formPrice" required placeholder="65000" class="w-full bg-zinc-950 border border-zinc-700 p-2.5 text-white focus:outline-none focus:border-brand-yellow font-mono" />
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-mono font-bold text-zinc-300 uppercase mb-1">Harga Coret (Sebelum Diskon)</label>
-            <input type="number" id="formOldPrice" placeholder="75000" class="w-full bg-zinc-950 border border-zinc-700 p-2.5 text-white focus:outline-none focus:border-brand-yellow font-mono" />
-          </div>
-          <div>
-            <label class="block font-mono font-bold text-zinc-300 uppercase mb-1">Status Fokus Minggu Ini?</label>
-            <select id="formIsFocus" class="w-full bg-zinc-950 border border-zinc-700 p-2.5 text-white focus:outline-none focus:border-brand-yellow">
-              <option value="false">Tidak (Katalog Biasa)</option>
-              <option value="true">YA (Tampilkan di Fokus Minggu Ini)</option>
-            </select>
-          </div>
+      <div class="space-y-4">
+        <div class="aspect-video w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+          <img id="modalImg" src="" alt="" class="w-full h-full object-cover" />
         </div>
 
         <div>
-          <label class="block font-mono font-bold text-zinc-300 uppercase mb-1">URL Foto Barang</label>
-          <input type="url" id="formImgUrl" placeholder="https://images.unsplash.com/..." class="w-full bg-zinc-950 border border-zinc-700 p-2.5 text-white focus:outline-none focus:border-brand-yellow" />
-          <span class="text-[10px] text-zinc-500">Biarkan kosong jika ingin menggunakan foto placeholder default.</span>
+          <span id="modalCat" class="text-xs font-semibold text-amber-700 uppercase">Kategori</span>
+          <h3 id="modalTitle" class="text-xl font-bold text-slate-900 mt-0.5">Nama Barang</h3>
+          <p id="modalDesc" class="text-xs text-slate-500 mt-1 leading-relaxed">Deskripsi produk...</p>
         </div>
 
-        <div>
-          <label class="block font-mono font-bold text-zinc-300 uppercase mb-1">Deskripsi Singkat</label>
-          <textarea id="formDesc" rows="2" placeholder="Material standar SNI dengan kualitas premium..." class="w-full bg-zinc-950 border border-zinc-700 p-2.5 text-white focus:outline-none focus:border-brand-yellow"></textarea>
+        <!-- Variants Selector Section -->
+        <div class="pt-3 border-t border-slate-100">
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Pilih Varian (Ukuran / Kemasan):</label>
+          <div id="modalVariantsList" class="flex flex-wrap gap-2">
+            <!-- Variant buttons dynamically injected -->
+          </div>
         </div>
 
-        <!-- Varian Section -->
-        <div class="p-3 bg-zinc-950 border border-zinc-800">
-          <label class="block font-mono font-bold text-brand-yellow uppercase mb-1">
-            <i class="fa-solid fa-layer-group mr-1"></i> Varian Barang (Format: Nama Varian:Harga)
-          </label>
-          <p class="text-[10px] text-zinc-400 mb-2">Pisahkan antar varian dengan tanda koma. Contoh: <code>40kg:65000, 50kg:78000</code> atau <code>Galon 5kg:145000, Pail 20kg:520000</code></p>
-          <input type="text" id="formVariants" placeholder="Contoh: Sak 40kg:65000, Sak 50kg:79000" class="w-full bg-zinc-900 border border-zinc-700 p-2 text-white font-mono text-xs focus:outline-none focus:border-brand-yellow" />
-        </div>
-
-        <div class="pt-3 border-t border-zinc-800 flex items-center justify-end gap-3">
-          <button type="button" onclick="closeProductFormModal()" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold uppercase text-xs">
-            Batal
-          </button>
-          <button type="submit" class="px-6 py-2 bg-brand-yellow hover:bg-yellow-400 text-black font-extrabold uppercase text-xs tracking-wider">
-            Simpan Barang
+        <!-- Price & Order Action -->
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <div>
+            <div class="text-[11px] text-slate-400 font-medium">Harga Varian Terpilih:</div>
+            <div id="modalSelectedPrice" class="text-2xl font-extrabold text-slate-900">Rp 0</div>
+          </div>
+          <button onclick="orderCurrentModalVariant()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+            <span>Pesan via WhatsApp</span>
           </button>
         </div>
-      </form>
-
+      </div>
     </div>
   </div>
 
-  <!-- TOAST NOTIFICATION -->
-  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-zinc-900 border-2 border-brand-yellow text-white px-5 py-3 shadow-2xl flex items-center gap-3">
-    <div class="w-8 h-8 bg-brand-yellow text-black flex items-center justify-center font-bold">
-      <i class="fa-solid fa-check"></i>
-    </div>
-    <div>
-      <div class="font-display font-bold text-xs uppercase" id="toastTitle">BERHASIL</div>
-      <div class="text-[11px] text-zinc-400" id="toastMessage">Perubahan berhasil disimpan.</div>
-    </div>
-  </div>
-
-  <!-- JAVASCRIPT: LOGIC, LOCALSTORAGE & INTERACTIVITY -->
+  <!-- JAVASCRIPT: BROWSE & SYNC LOGIC -->
   <script>
-    // --- 1. DEFAULT DUMMY DATA UNTUK TOKO BANGUNAN ---
-    const initialDummyProducts = [
+    // Initial standard dataset (digunakan jika localStorage masih kosong)
+    const defaultProducts = [
       {
         id: "prod-1",
         name: "Semen Gresik Portland Composite (PPC)",
@@ -967,7 +505,7 @@
         oldPrice: 74000,
         isFocus: true,
         img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=80",
-        desc: "Semen PCC serbaguna standar SNI. Daya rekat tinggi, kedap air, tahan retak untuk plesteran, acian, dan cor beton.",
+        desc: "Semen PCC serbaguna standar SNI. Cocok untuk pasangan bata, plesteran, dan cor beton struktur.",
         variants: [
           { name: "Sak 40 Kg", price: 54000 },
           { name: "Sak 50 Kg", price: 64500 }
@@ -981,7 +519,7 @@
         oldPrice: 385000,
         isFocus: true,
         img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&auto=format&fit=crop&q=80",
-        desc: "Cat pelindung dinding luar premium dengan teknologi Keep Cool dan garansi ketahanan jamur/lumut hingga 5 tahun.",
+        desc: "Cat dinding luar dengan teknologi pelindung anti jamur, lumut, dan warna tahan pudar hingga 5 tahun.",
         variants: [
           { name: "Galon 2.5 Liter", price: 345000 },
           { name: "Pail 20 Liter", price: 2150000 }
@@ -995,7 +533,7 @@
         oldPrice: 98000,
         isFocus: true,
         img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop&q=80",
-        desc: "Kanal C Zincalume 6 meter full standar SNI. Anti karat, kuat menopang genteng tanah liat, beton maupun metal pasir.",
+        desc: "Kanal C Zincalume 6 meter full standar SNI. Tahan karat dan kokoh untuk rangka atap genteng.",
         variants: [
           { name: "C75 x 0.75mm (6m)", price: 88500 },
           { name: "C75 x 1.00mm (6m)", price: 118000 },
@@ -1004,16 +542,16 @@
       },
       {
         id: "prod-4",
-        name: "Granit Tile 60x60 Glazed Polished Carrara White",
+        name: "Granit Tile 60x60 Glazed Polished Carrara",
         category: "Keramik & Granit",
         price: 185000,
         oldPrice: 220000,
         isFocus: true,
         img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80",
-        desc: "Granit motif marmer putih mewah Carrara Itali. Permukaan glossy kilap cermin, presisi cutting nat rapat.",
+        desc: "Granit motif marmer putih mewah dengan permukaan kilap halus dan presisi nat siku rapat.",
         variants: [
           { name: "1 Dus (1.44 m² / 4 Pcs)", price: 185000 },
-          { name: "Palet Grosir (40 Dus)", price: 7200000 }
+          { name: "1 Palet Grosir (40 Dus)", price: 7200000 }
         ]
       },
       {
@@ -1021,10 +559,10 @@
         name: "Pipa PVC Rucika Standard JIS Tipe AW",
         category: "Pipa & Sanitari",
         price: 75000,
-        oldPrice: 85000,
+        oldPrice: null,
         isFocus: false,
         img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
-        desc: "Pipa air bersih tahan tekanan tinggi 10 kg/cm², kuat dan tidak beracun untuk instalasi plumbing gedung.",
+        desc: "Pipa air bersih tahan tekanan tinggi, awet, dan bebas timbal untuk instalasi gedung.",
         variants: [
           { name: "Ukuran 1/2 Inch (4m)", price: 42000 },
           { name: "Ukuran 3/4 Inch (4m)", price: 58000 },
@@ -1034,13 +572,13 @@
       },
       {
         id: "prod-6",
-        name: "Mortar Utama MU-200 SkimWall Acian Plester",
+        name: "Mortar Instan MU-200 SkimWall Acian Plester",
         category: "Semen & Mortar",
         price: 92000,
-        oldPrice: 99000,
+        oldPrice: null,
         isFocus: false,
         img: "https://images.unsplash.com/photo-1590496793929-36417d3117de?w=600&auto=format&fit=crop&q=80",
-        desc: "Semen instan acian dinding plesteran dan beton. Hasil permukaan halus, tidak retak rambut, langsung siap dicat.",
+        desc: "Semen instan siap pakai untuk acian dinding plesteran. Hasil halus dan tidak retak rambut.",
         variants: [
           { name: "Sak 40 Kg", price: 92000 }
         ]
@@ -1053,509 +591,244 @@
         oldPrice: 1350000,
         isFocus: false,
         img: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?w=600&auto=format&fit=crop&q=80",
-        desc: "Mesin bor beton nirkabel dengan motor brushless bertenaga tinggi. Dilengkapi 2 baterai Lithium dan koper tangguh.",
+        desc: "Mesin bor beton tanpa kabel dengan motor brushless bertenaga tinggi, komplit 2 baterai.",
         variants: [
-          { name: "Unit Only (Tanpa Baterai)", price: 680000 },
-          { name: "Set Lengkap (2 Baterai + Charger)", price: 1150000 }
+          { name: "Unit Only", price: 680000 },
+          { name: "Set 2 Baterai + Charger", price: 1150000 }
         ]
       },
       {
         id: "prod-8",
-        name: "Besi Beton Ulir SNI BjTS 420B Full Diameter 12mm",
+        name: "Besi Beton Ulir SNI BjTS 420B Full 12mm",
         category: "Baja & Besi",
         price: 128000,
-        oldPrice: 136000,
+        oldPrice: null,
         isFocus: false,
         img: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=600&auto=format&fit=crop&q=80",
-        desc: "Besi tulangan beton bersertifikat SNI panjang 12 meter utuh. Kuat tarik tinggi untuk pondasi struktur gedung bertingkat.",
+        desc: "Besi tulangan bersertifikat SNI panjang 12 meter utuh untuk struktur pondasi bangunan.",
         variants: [
-          { name: "Batang 10mm (12m)", price: 89000 },
-          { name: "Batang 12mm (12m)", price: 128000 },
-          { name: "Batang 16mm (12m)", price: 228000 }
+          { name: "Diameter 10mm (12m)", price: 89000 },
+          { name: "Diameter 12mm (12m)", price: 128000 },
+          { name: "Diameter 16mm (12m)", price: 228000 }
         ]
       }
     ];
 
-    // --- 2. LOCALSTORAGE STATE INITIALIZATION ---
     let products = [];
-    let currentCategoryFilter = 'ALL';
-    let activeModalProduct = null;
-    let selectedModalVariant = null;
+    let selectedCategory = 'ALL';
+    let currentDetailProduct = null;
+    let currentDetailVariant = null;
 
+    // Load from shared localStorage (otomatis tersinkronisasi dengan admin.html)
     function loadProducts() {
-      const stored = localStorage.getItem('megabuild_products_db');
-      if (stored) {
+      const saved = localStorage.getItem('megabuild_products');
+      if (saved) {
         try {
-          products = JSON.parse(stored);
+          products = JSON.parse(saved);
         } catch (e) {
-          products = initialDummyProducts;
+          products = defaultProducts;
         }
       } else {
-        products = initialDummyProducts;
-        saveProducts();
+        products = defaultProducts;
+        localStorage.setItem('megabuild_products', JSON.stringify(products));
       }
     }
 
-    function saveProducts() {
-      localStorage.setItem('megabuild_products_db', JSON.stringify(products));
-      renderAllViews();
+    function formatRupiah(num) {
+      return "Rp " + Number(num).toLocaleString('id-ID');
     }
 
-    function resetDefaultData() {
-      if (confirm("Reset data kembali ke data contoh toko bangunan asli?")) {
-        products = JSON.parse(JSON.stringify(initialDummyProducts));
-        saveProducts();
-        showToast("DATA DI-RESET", "Data barang kembali ke template awal.");
-      }
-    }
+    // Render Focus Grid (Fokus Minggu Ini)
+    function renderFocus() {
+      const container = document.getElementById('focusContainer');
+      const focusList = products.filter(p => p.isFocus);
 
-    // --- 3. FORMATTING HELPERS ---
-    function formatIDR(number) {
-      return "Rp " + Number(number).toLocaleString("id-ID");
-    }
-
-    // --- 4. RENDERERS ---
-    function renderAllViews() {
-      renderFocusGrid();
-      renderCatalogGrid();
-      renderAdminTable();
-    }
-
-    // Render Focus Grid (Barang Fokus Minggu Ini)
-    function renderFocusGrid() {
-      const container = document.getElementById('focusProductsGrid');
-      const focusItems = products.filter(p => p.isFocus);
-
-      if (focusItems.length === 0) {
+      if (focusList.length === 0) {
         container.innerHTML = `
-          <div class="col-span-4 py-8 text-center bg-zinc-950 border border-zinc-800 text-zinc-500 text-xs font-mono">
-            Belum ada barang yang ditandai sebagai fokus minggu ini. Klik tombol "Set Barang Fokus" untuk menambahkan.
+          <div class="col-span-4 p-8 text-center text-slate-400 text-xs bg-white rounded-xl border border-slate-200">
+            Belum ada barang yang ditandai sebagai fokus minggu ini.
           </div>
         `;
         return;
       }
 
-      container.innerHTML = focusItems.map(p => `
-        <div class="bg-zinc-950 border border-zinc-800 group hover:border-brand-yellow/60 transition duration-300 flex flex-col justify-between">
+      container.innerHTML = focusList.map(p => `
+        <div class="clean-card p-5 flex flex-col justify-between">
           <div>
-            <div class="relative w-full h-48 bg-zinc-900 overflow-hidden">
-              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" />
-              <div class="absolute top-2 left-2 flex gap-1.5">
-                <span class="px-2 py-0.5 bg-brand-yellow text-black font-extrabold text-[10px] tracking-wider uppercase">
-                  FOKUS MINGGU INI
-                </span>
-                ${p.oldPrice ? `<span class="px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] uppercase">DISKON</span>` : ''}
-              </div>
-            </div>
-
-            <div class="p-5">
-              <span class="text-[10px] font-mono font-bold text-zinc-500 uppercase">${p.category}</span>
-              <h3 class="font-display font-black text-base text-white uppercase tracking-tight mt-1 group-hover:text-brand-yellow transition line-clamp-2">
-                ${p.name}
-              </h3>
-              <p class="text-xs text-zinc-400 mt-1 line-clamp-2">${p.desc}</p>
-            </div>
-          </div>
-
-          <div class="p-5 pt-0 border-t border-zinc-900 mt-2">
-            <div class="flex items-baseline justify-between py-2">
-              <div>
-                ${p.oldPrice ? `<span class="text-[11px] text-zinc-500 line-through">${formatIDR(p.oldPrice)}</span>` : ''}
-                <div class="font-mono font-black text-lg text-brand-yellow">${formatIDR(p.price)}</div>
-              </div>
-              <span class="text-[10px] font-mono text-zinc-400 bg-zinc-900 px-2 py-1 border border-zinc-800">
-                ${p.variants ? p.variants.length + ' Varian' : '1 Varian'}
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative mb-4">
+              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover" />
+              <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase">
+                Fokus Minggu Ini
               </span>
             </div>
 
-            <div class="grid grid-cols-2 gap-2 mt-2">
-              <button onclick="openDetailModal('${p.id}')" class="py-2 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold uppercase tracking-wider transition border border-zinc-700 text-center">
-                Pilih Varian
-              </button>
-              <button onclick="quickOrder('${p.name}', '${formatIDR(p.price)}')" class="py-2 bg-brand-yellow hover:bg-yellow-400 text-black text-xs font-extrabold uppercase tracking-wider transition flex items-center justify-center gap-1.5">
-                <i class="fa-brands fa-whatsapp text-sm"></i>
-                <span>Beli WA</span>
-              </button>
+            <span class="text-[11px] font-semibold text-slate-500 uppercase">${p.category}</span>
+            <h3 class="font-bold text-sm text-slate-900 mt-0.5 line-clamp-2">${p.name}</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2">${p.desc}</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 mt-4">
+            <div class="flex items-baseline justify-between mb-3">
+              <div>
+                ${p.oldPrice ? `<span class="text-[10px] text-slate-400 line-through">${formatRupiah(p.oldPrice)}</span>` : ''}
+                <div class="text-base font-extrabold text-slate-900">${formatRupiah(p.price)}</div>
+              </div>
+              <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                ${p.variants ? p.variants.length + ' Varian' : '1 Opsi'}
+              </span>
             </div>
+
+            <button onclick="openDetailModal('${p.id}')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition text-center flex items-center justify-center gap-1.5">
+              <span>Pilih Varian & Pesan</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
           </div>
         </div>
       `).join('');
     }
 
-    // Render Main Catalog Grid with Filter & Search
-    function renderCatalogGrid() {
-      const container = document.getElementById('productsGrid');
-      const noFound = document.getElementById('noProductsFound');
-      const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+    // Render Full Catalog
+    function renderCatalog() {
+      const container = document.getElementById('catalogContainer');
+      const notFound = document.getElementById('notFoundMsg');
+      const search = document.getElementById('searchInput').value.toLowerCase().trim();
 
       const filtered = products.filter(p => {
-        const matchesCategory = (currentCategoryFilter === 'ALL' || p.category === currentCategoryFilter);
-        const matchesSearch = p.name.toLowerCase().includes(searchVal) || 
-                              p.category.toLowerCase().includes(searchVal) || 
-                              p.desc.toLowerCase().includes(searchVal) ||
-                              (p.variants && p.variants.some(v => v.name.toLowerCase().includes(searchVal)));
-        return matchesCategory && matchesSearch;
+        const matchCat = (selectedCategory === 'ALL' || p.category === selectedCategory);
+        const matchSearch = p.name.toLowerCase().includes(search) || 
+                            p.category.toLowerCase().includes(search) ||
+                            (p.variants && p.variants.some(v => v.name.toLowerCase().includes(search)));
+        return matchCat && matchSearch;
       });
 
       if (filtered.length === 0) {
         container.innerHTML = '';
-        noFound.classList.remove('hidden');
+        notFound.classList.remove('hidden');
         return;
       }
-      noFound.classList.add('hidden');
+      notFound.classList.add('hidden');
 
       container.innerHTML = filtered.map(p => `
-        <div class="bg-zinc-900/90 border border-zinc-800 group hover:border-zinc-700 transition flex flex-col justify-between">
+        <div class="clean-card p-4 flex flex-col justify-between">
           <div>
-            <div class="relative w-full h-44 bg-zinc-950 overflow-hidden">
-              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300 opacity-90" />
-              <div class="absolute top-2 left-2 flex gap-1">
-                ${p.isFocus ? `<span class="px-2 py-0.5 bg-brand-yellow text-black font-extrabold text-[9px] uppercase">FOKUS</span>` : ''}
-                <span class="px-2 py-0.5 bg-zinc-950/80 backdrop-blur-md text-zinc-300 border border-zinc-800 font-mono text-[9px] uppercase">
-                  ${p.category}
-                </span>
-              </div>
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative mb-3">
+              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover" />
+              ${p.isFocus ? `<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-bold text-[9px] uppercase">Fokus</span>` : ''}
             </div>
 
-            <div class="p-4">
-              <h3 class="font-display font-bold text-sm text-white uppercase tracking-tight line-clamp-2 group-hover:text-brand-yellow transition">
-                ${p.name}
-              </h3>
-              <p class="text-[11px] text-zinc-400 mt-1 line-clamp-2">${p.desc}</p>
-            </div>
+            <span class="text-[10px] font-semibold text-slate-400 uppercase">${p.category}</span>
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900 mt-0.5 line-clamp-2">${p.name}</h3>
           </div>
 
-          <div class="p-4 pt-0 border-t border-zinc-800/80 mt-1">
-            <div class="flex items-baseline justify-between py-1.5">
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline justify-between mb-2">
               <div>
-                ${p.oldPrice ? `<span class="text-[10px] text-zinc-500 line-through">${formatIDR(p.oldPrice)}</span>` : ''}
-                <div class="font-mono font-bold text-base text-brand-yellow">${formatIDR(p.price)}</div>
+                ${p.oldPrice ? `<span class="text-[10px] text-slate-400 line-through">${formatRupiah(p.oldPrice)}</span>` : ''}
+                <div class="text-sm font-extrabold text-slate-900">${formatRupiah(p.price)}</div>
               </div>
-              <span class="text-[10px] font-mono text-zinc-500">
-                ${p.variants && p.variants.length > 0 ? `${p.variants.length} Opsi Varian` : 'Standar'}
-              </span>
+              <span class="text-[10px] text-slate-500">${p.variants ? p.variants.length + ' Varian' : 'Standar'}</span>
             </div>
 
-            <div class="grid grid-cols-2 gap-2 mt-2">
-              <button onclick="openDetailModal('${p.id}')" class="py-2 bg-zinc-950 hover:bg-zinc-800 text-white text-[11px] font-bold uppercase tracking-wider transition border border-zinc-700 text-center">
-                Varian
-              </button>
-              <button onclick="quickOrder('${p.name}', '${formatIDR(p.price)}')" class="py-2 bg-brand-yellow hover:bg-yellow-400 text-black text-[11px] font-extrabold uppercase tracking-wider transition flex items-center justify-center gap-1">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>Order</span>
-              </button>
-            </div>
+            <button onclick="openDetailModal('${p.id}')" class="w-full py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition">
+              Pilih Varian
+            </button>
           </div>
         </div>
       `).join('');
     }
 
-    // Render Admin Table
-    function renderAdminTable() {
-      const tbody = document.getElementById('adminProductsTable');
-      document.getElementById('adminTotalCount').textContent = products.length;
-
-      tbody.innerHTML = products.map((p, idx) => `
-        <tr class="hover:bg-zinc-950/60 transition">
-          <td class="p-2.5">
-            <img src="${p.img}" class="w-10 h-10 object-cover border border-zinc-800" />
-          </td>
-          <td class="p-2.5">
-            <div class="font-bold text-white text-xs">${p.name}</div>
-            <div class="text-[10px] text-zinc-500 font-mono">${p.variants ? p.variants.map(v => v.name).join(', ') : '-'}</div>
-          </td>
-          <td class="p-2.5 font-mono text-[11px] text-zinc-400">${p.category}</td>
-          <td class="p-2.5 text-right font-mono font-bold text-brand-yellow">${formatIDR(p.price)}</td>
-          <td class="p-2.5 text-center">
-            <button onclick="toggleProductFocus('${p.id}')" class="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded ${p.isFocus ? 'bg-amber-500/20 text-brand-yellow border border-amber-500/40' : 'bg-zinc-800 text-zinc-500'}">
-              ${p.isFocus ? '★ YA (FOKUS)' : 'TIDAK'}
-            </button>
-          </td>
-          <td class="p-2.5 text-center">
-            <div class="flex items-center justify-center gap-1.5">
-              <button onclick="editProduct('${p.id}')" class="w-7 h-7 bg-zinc-800 hover:bg-brand-yellow hover:text-black text-zinc-200 flex items-center justify-center transition" title="Edit Barang & Harga">
-                <i class="fa-solid fa-pen-to-square text-xs"></i>
-              </button>
-              <button onclick="deleteProduct('${p.id}')" class="w-7 h-7 bg-zinc-800 hover:bg-red-600 hover:text-white text-zinc-200 flex items-center justify-center transition" title="Hapus Barang">
-                <i class="fa-solid fa-trash text-xs"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-      `).join('');
-    }
-
-    // --- 5. CATEGORY & SEARCH HANDLERS ---
-    function filterCategory(cat, btn) {
-      currentCategoryFilter = cat;
+    function setCategory(cat, btn) {
+      selectedCategory = cat;
       document.querySelectorAll('.cat-pill').forEach(b => {
-        b.className = "cat-pill px-4 py-2 bg-zinc-800 text-zinc-300 hover:text-white whitespace-nowrap transition";
+        b.className = "cat-pill px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 whitespace-nowrap transition";
       });
-      btn.className = "cat-pill px-4 py-2 bg-brand-yellow text-black font-extrabold whitespace-nowrap transition";
-      renderCatalogGrid();
+      btn.className = "cat-pill px-4 py-2 rounded-xl bg-slate-900 text-white whitespace-nowrap transition";
+      renderCatalog();
     }
 
-    function searchProducts() {
-      renderCatalogGrid();
-    }
-
-    function focusSearch() {
-      const input = document.getElementById('searchInput');
-      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      input.focus();
-    }
-
-    // --- 6. PRODUCT DETAIL & VARIANT MODAL ---
+    // Modal Detail & Variant Handling
     function openDetailModal(id) {
       const p = products.find(item => item.id === id);
       if (!p) return;
 
-      activeModalProduct = p;
-      document.getElementById('detailImg').src = p.img;
-      document.getElementById('detailCategory').textContent = p.category;
-      document.getElementById('detailTitle').textContent = p.name;
-      document.getElementById('detailDesc').textContent = p.desc;
-      document.getElementById('detailBadge').textContent = p.isFocus ? 'FOKUS MINGGU INI' : 'READY STOCK';
+      currentDetailProduct = p;
+      document.getElementById('modalImg').src = p.img;
+      document.getElementById('modalCat').textContent = p.category;
+      document.getElementById('modalTitle').textContent = p.name;
+      document.getElementById('modalDesc').textContent = p.desc;
 
-      const varContainer = document.getElementById('detailVariantsContainer');
       const variants = p.variants && p.variants.length > 0 ? p.variants : [{ name: "Standar", price: p.price }];
+      currentDetailVariant = variants[0];
+      document.getElementById('modalSelectedPrice').textContent = formatRupiah(currentDetailVariant.price);
 
-      selectedModalVariant = variants[0];
-      document.getElementById('detailSelectedPrice').textContent = formatIDR(selectedModalVariant.price);
-
-      varContainer.innerHTML = variants.map((v, i) => `
-        <button onclick="selectVariant(${i})" class="variant-chip px-3 py-1.5 text-xs font-mono font-bold border transition ${i === 0 ? 'border-brand-yellow bg-brand-yellow/15 text-brand-yellow' : 'border-zinc-700 bg-zinc-800 text-zinc-300 hover:border-zinc-500'}">
-          ${v.name} (${formatIDR(v.price)})
+      const listContainer = document.getElementById('modalVariantsList');
+      listContainer.innerHTML = variants.map((v, idx) => `
+        <button onclick="pickVariant(${idx})" class="var-btn px-3 py-1.5 rounded-lg text-xs font-semibold border transition ${idx === 0 ? 'bg-amber-50 border-amber-500 text-amber-900' : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'}">
+          ${v.name} (${formatRupiah(v.price)})
         </button>
       `).join('');
 
-      const modal = document.getElementById('productDetailModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+      document.getElementById('detailModal').classList.remove('hidden');
+      document.getElementById('detailModal').classList.add('flex');
     }
 
-    function selectVariant(index) {
-      if (!activeModalProduct || !activeModalProduct.variants) return;
-      selectedModalVariant = activeModalProduct.variants[index];
-      document.getElementById('detailSelectedPrice').textContent = formatIDR(selectedModalVariant.price);
+    function pickVariant(index) {
+      if (!currentDetailProduct || !currentDetailProduct.variants) return;
+      currentDetailVariant = currentDetailProduct.variants[index];
+      document.getElementById('modalSelectedPrice').textContent = formatRupiah(currentDetailVariant.price);
 
-      const chips = document.querySelectorAll('.variant-chip');
-      chips.forEach((c, idx) => {
+      document.querySelectorAll('.var-btn').forEach((b, idx) => {
         if (idx === index) {
-          c.className = "variant-chip px-3 py-1.5 text-xs font-mono font-bold border border-brand-yellow bg-brand-yellow/15 text-brand-yellow transition";
+          b.className = "var-btn px-3 py-1.5 rounded-lg text-xs font-semibold border bg-amber-50 border-amber-500 text-amber-900 transition";
         } else {
-          c.className = "variant-chip px-3 py-1.5 text-xs font-mono font-bold border border-zinc-700 bg-zinc-800 text-zinc-300 hover:border-zinc-500 transition";
+          b.className = "var-btn px-3 py-1.5 rounded-lg text-xs font-semibold border bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 transition";
         }
       });
     }
 
     function closeDetailModal() {
-      const modal = document.getElementById('productDetailModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
+      document.getElementById('detailModal').classList.add('hidden');
+      document.getElementById('detailModal').classList.remove('flex');
     }
 
-    function orderSelectedVariantWA() {
-      if (!activeModalProduct) return;
-      const varName = selectedModalVariant ? selectedModalVariant.name : "Standar";
-      const varPrice = selectedModalVariant ? formatIDR(selectedModalVariant.price) : formatIDR(activeModalProduct.price);
-      
-      const text = encodeURIComponent(`Halo Sales MEGABUILD, saya ingin memesan:\n• Produk: ${activeModalProduct.name}\n• Varian: ${varName}\n• Estimasi Harga: ${varPrice}\n\nMohon info ketersediaan stok & ongkos kirim ke alamat saya. Terima kasih!`);
-      window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    function orderCurrentModalVariant() {
+      if (!currentDetailProduct) return;
+      const vName = currentDetailVariant ? currentDetailVariant.name : "Standar";
+      const vPrice = currentDetailVariant ? formatRupiah(currentDetailVariant.price) : formatRupiah(currentDetailProduct.price);
+
+      const msg = encodeURIComponent(`Halo Sales MEGABUILD, saya ingin memesan:\n• Produk: ${currentDetailProduct.name}\n• Varian: ${vName}\n• Estimasi Harga: ${vPrice}\n\nMohon info stok dan pengirimannya ya. Terima kasih!`);
+      window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
     }
 
-    function quickOrder(productName, price) {
-      const text = encodeURIComponent(`Halo Sales MEGABUILD, saya tertarik memesan:\n• Produk: ${productName}\n• Harga: ${price}\n\nMohon info ketersediaan stok hari ini. Terima kasih!`);
-      window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    function orderWA(productName, price) {
+      const msg = encodeURIComponent(`Halo Sales MEGABUILD, saya tertarik memesan:\n• Produk: ${productName}\n• Harga: ${price}\n\nMohon info ketersediaan stok hari ini. Terima kasih!`);
+      window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
     }
 
-    // --- 7. ADMIN PORTAL (TAMBAH / EDIT / HAPUS) ---
-    function openAdminModal() {
-      renderAdminTable();
-      const modal = document.getElementById('adminModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
-    function closeAdminModal() {
-      const modal = document.getElementById('adminModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    function toggleProductFocus(id) {
-      const p = products.find(item => item.id === id);
-      if (p) {
-        p.isFocus = !p.isFocus;
-        saveProducts();
-        showToast("STATUS DIPERBARUI", `Barang "${p.name}" sekarang ${p.isFocus ? 'menjadi Fokus Minggu Ini' : 'menjadi katalog biasa'}.`);
-      }
-    }
-
-    function openAddProductModal(asFocus = false) {
-      document.getElementById('productForm').reset();
-      document.getElementById('editProductId').value = '';
-      document.getElementById('formModalTitle').textContent = 'TAMBAH BARANG BARU';
-      document.getElementById('formIsFocus').value = asFocus ? 'true' : 'false';
-
-      const modal = document.getElementById('productFormModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
-    function editProduct(id) {
-      const p = products.find(item => item.id === id);
-      if (!p) return;
-
-      document.getElementById('editProductId').value = p.id;
-      document.getElementById('formModalTitle').textContent = 'EDIT BARANG & HARGA';
-      document.getElementById('formName').value = p.name;
-      document.getElementById('formCategory').value = p.category;
-      document.getElementById('formPrice').value = p.price;
-      document.getElementById('formOldPrice').value = p.oldPrice || '';
-      document.getElementById('formIsFocus').value = p.isFocus ? 'true' : 'false';
-      document.getElementById('formImgUrl').value = p.img || '';
-      document.getElementById('formDesc').value = p.desc || '';
-
-      if (p.variants && p.variants.length > 0) {
-        document.getElementById('formVariants').value = p.variants.map(v => `${v.name}:${v.price}`).join(', ');
-      } else {
-        document.getElementById('formVariants').value = '';
-      }
-
-      const modal = document.getElementById('productFormModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
-    function closeProductFormModal() {
-      const modal = document.getElementById('productFormModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    function handleProductFormSubmit(e) {
-      e.preventDefault();
-
-      const editId = document.getElementById('editProductId').value;
-      const name = document.getElementById('formName').value.trim();
-      const category = document.getElementById('formCategory').value;
-      const price = Number(document.getElementById('formPrice').value);
-      const oldPrice = document.getElementById('formOldPrice').value ? Number(document.getElementById('formOldPrice').value) : null;
-      const isFocus = document.getElementById('formIsFocus').value === 'true';
-      let img = document.getElementById('formImgUrl').value.trim();
-      const desc = document.getElementById('formDesc').value.trim();
-      const variantsRaw = document.getElementById('formVariants').value.trim();
-
-      if (!img) {
-        img = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop&q=80";
-      }
-
-      // Parse Variants
-      let variants = [];
-      if (variantsRaw) {
-        const parts = variantsRaw.split(',');
-        parts.forEach(part => {
-          const split = part.split(':');
-          if (split.length === 2) {
-            const vName = split[0].trim();
-            const vPrice = Number(split[1].trim());
-            if (vName && !isNaN(vPrice)) {
-              variants.push({ name: vName, price: vPrice });
-            }
-          }
-        });
-      }
-      if (variants.length === 0) {
-        variants = [{ name: "Standar", price: price }];
-      }
-
-      if (editId) {
-        // Edit existing
-        const idx = products.findIndex(p => p.id === editId);
-        if (idx !== -1) {
-          products[idx] = {
-            ...products[idx],
-            name,
-            category,
-            price,
-            oldPrice,
-            isFocus,
-            img,
-            desc,
-            variants
-          };
-          showToast("BARANG DIUPDATE", `Data "${name}" berhasil diperbarui.`);
-        }
-      } else {
-        // Add new
-        const newProduct = {
-          id: "prod-" + Date.now(),
-          name,
-          category,
-          price,
-          oldPrice,
-          isFocus,
-          img,
-          desc,
-          variants
-        };
-        products.unshift(newProduct);
-        showToast("BARANG DITAMBAHKAN", `"${name}" berhasil dimasukkan ke katalog.`);
-      }
-
-      saveProducts();
-      closeProductFormModal();
-      openAdminModal();
-    }
-
-    function deleteProduct(id) {
-      const p = products.find(item => item.id === id);
-      if (!p) return;
-
-      if (confirm(`Apakah Anda yakin ingin menghapus "${p.name}" dari sistem?`)) {
-        products = products.filter(item => item.id !== id);
-        saveProducts();
-        showToast("BARANG DIHAPUS", `"${p.name}" telah dihapus.`);
-      }
-    }
-
-    // --- 8. COPY ADDRESS & MISC UTILITIES ---
     function copyAddress() {
       const text = "Kawasan Niaga & Industri Megabuild Blok C No. 88-90, Jl. Daan Mogot KM 14, Kalideres, Jakarta Barat 11840";
       navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById('copyAddrBtn');
-        btn.innerHTML = `<i class="fa-solid fa-check text-green-400 mr-1"></i> Tersalin!`;
-        showToast("ALAMAT TERSALIN", "Alamat lengkap disalin ke clipboard.");
+        const btn = document.getElementById('copyBtn');
+        btn.innerHTML = `<i class="fa-solid fa-check text-emerald-600"></i> Alamat Berhasil Disalin!`;
         setTimeout(() => {
-          btn.innerHTML = `<i class="fa-regular fa-copy mr-1"></i> Salin Alamat`;
+          btn.innerHTML = `<i class="fa-regular fa-copy"></i> Salin Alamat`;
         }, 2500);
       });
     }
 
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    }
+    // Dengarkan perubahan data jika admin.html mengubah data di tab lain
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'megabuild_products') {
+        loadProducts();
+        renderFocus();
+        renderCatalog();
+      }
+    });
 
-    function showToast(title, message) {
-      const toast = document.getElementById('toastNotification');
-      document.getElementById('toastTitle').textContent = title;
-      document.getElementById('toastMessage').textContent = message;
-
-      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
-      toast.classList.add('translate-y-0', 'opacity-100');
-
-      setTimeout(() => {
-        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-        toast.classList.remove('translate-y-0', 'opacity-100');
-      }, 3500);
-    }
-
-    // --- 9. BOOTSTRAP ON LOAD ---
     window.addEventListener('DOMContentLoaded', () => {
       loadProducts();
-      renderAllViews();
+      renderFocus();
+      renderCatalog();
     });
   </script>
 </body>
